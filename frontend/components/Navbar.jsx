@@ -28,7 +28,7 @@ function Navbar() {
         </div>
       </div>
 
-      {/* This for smaller screen */}
+      {/* Navbar for smaller screen */}
       <div className="justify-start md:hidden">
         <HiMenuAlt4
           className="cursor-pointer "
@@ -66,14 +66,18 @@ function Navbar() {
         )}
       </div>
 
+      {/* Logo for smaller screen */}
+
       <div className="flex md:hidden">
         <p className=" text-lg font-serif text-white">WDK Pizza</p>
       </div>
 
+      {/* Navbar for bigger screen */}
+
       <div className="hidden md:flex items-center">
         <ul
-          className="flex items-center list-none text-white 
-        space-x-1 md:space-x-2 lg:space-x-5 xl:space-x-10 "
+          className="flex flex-1 items-center list-none text-white 
+        space-x-1 md:space-x-4 lg:space-x-6 xl:space-x-10 "
         >
           {["Homepage", "Products", "Menu", "Events", "Blogs", "Contact"].map(
             (item, i) => (
@@ -81,21 +85,9 @@ function Navbar() {
             )
           )}
         </ul>
-
-        {/* <ul
-          className="flex items-center list-none text-white 
-        space-x-1 md:space-x-2 lg:space-x-5 xl:space-x-10 "
-        >
-          <li className="">Products</li>
-          <li className="">Homepage</li>
-          <li className="">Menu</li>
-          <img src="/img/logo.png" alt="" width="160px" height="69px" />
-          <li className="">Events</li>
-          <li className="">Blog</li>
-          <li className="">Contact</li>
-        </ul> */}
       </div>
 
+      {/* Cart smaller and bigger screen  */}
       <div className="justify-end">
         <div className="relative">
           <img
