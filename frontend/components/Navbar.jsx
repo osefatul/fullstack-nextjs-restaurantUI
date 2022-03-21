@@ -8,9 +8,9 @@ function Navbar() {
   return (
     <div
       className="flex items-center justify-between  
-    h-24 bg-red-800 px-12 sticky top-0 z-50"
+    h-24 bg-red-800 px-6 sm:px-12 sticky top-0 z-50"
     >
-      <div className="hidden sm:flex items-center ">
+      <div className="hidden md:flex items-center ">
         <div
           className="flex items-center justify-center
          rounded-full bg-white
@@ -29,15 +29,22 @@ function Navbar() {
       </div>
 
       {/* This for smaller screen */}
-      <div className="justify-start sm:hidden">
+      <div className="justify-start md:hidden">
         <HiMenuAlt4
-          className="cursor-pointer"
+          className="cursor-pointer "
           onClick={() => setToggle(true)}
         />
         {toggle && (
-          <div className=" h-screen w-screen fixed top-0 left-0 z-50 bg-orange-800 ">
-            <HiX className="cursor-pointer" onClick={() => setToggle(false)} />
-            <ul className="flex flex-col space-y-3">
+          <div
+            className="h-screen w-screen
+            fixed top-0 left-0 z-50 
+            bg-orange-800  "
+          >
+            <HiX
+              className="cursor-pointer m-3"
+              onClick={() => setToggle(false)}
+            />
+            <ul className="flex flex-col space-y-3 py-20 ">
               {[
                 "Homepage",
                 "Products",
@@ -59,8 +66,8 @@ function Navbar() {
         )}
       </div>
 
-      <div>
-        <p className="text-lg font-serif text-white">WDK Pizza</p>
+      <div className="flex md:hidden">
+        <p className=" text-lg font-serif text-white">WDK Pizza</p>
       </div>
 
       <div className="hidden md:flex items-center">
