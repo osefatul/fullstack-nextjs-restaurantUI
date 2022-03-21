@@ -1,10 +1,13 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import { HiMenuAlt4, HiX } from "react-icons/hi";
 
 function Navbar() {
+  const [toggle, setToggle] = useState(false);
+
   return (
     <div className="flex items-center justify-between  h-24 bg-red-800 px-12 sticky top-0 z-50">
-      <div className=" flex items-center ">
+      <div className="hidden sm:flex items-center ">
         <div
           className="flex items-center justify-center
          rounded-full bg-white
@@ -16,14 +19,48 @@ function Navbar() {
           ></img>
         </div>
 
-        <div className="ml-5 text-white text-xs sm:text-sm lg:text-lg font-bold justify-end">
+        <div className="  ml-5 text-white text-xs sm:text-sm lg:text-lg font-bold justify-end">
           <div className="">ORDER NOW!</div>
           <div className="">012 345 678</div>
         </div>
       </div>
 
+      <div className="justify-start sm:hidden">
+        <HiMenuAlt4 onClick={() => setToggle(true)} />
+        {toggle && (
+          <div className=" grid ">
+            <HiX onClick={() => setToggle(false)} />
+            <ul>
+              {[
+                "Homepage",
+                "Products",
+                "Menu",
+                "Events",
+                "Blogs",
+                "Contact",
+              ].map((item, i) => (
+                <li key={i} onClick={() => setToggle(false)}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+
       <div className="hidden md:flex items-center">
         <ul
+          className="flex items-center list-none text-white 
+        space-x-1 md:space-x-2 lg:space-x-5 xl:space-x-10 "
+        >
+          {["Homepage", "Products", "Menu", "Events", "Blogs", "Contact"].map(
+            (item, i) => (
+              <li key={i}>{item}</li>
+            )
+          )}
+        </ul>
+
+        {/* <ul
           className="flex items-center list-none text-white 
         space-x-1 md:space-x-2 lg:space-x-5 xl:space-x-10 "
         >
@@ -34,17 +71,21 @@ function Navbar() {
           <li className="">Events</li>
           <li className="">Blog</li>
           <li className="">Contact</li>
-        </ul>
+        </ul> */}
       </div>
 
       <div className="justify-end">
         <div className="relative">
-          <img src="/img/cart.png" alt="" width="30px" height="30px" />
+          <img
+            className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 "
+            src="/img/cart.png"
+            alt=""
+          />
           <div
             className="absolute top-[-10px] right-[-10px]
-          w-5 h-5 bg-white rounded-full
-          flex items-center justify-center
-          font-bold text-red-800
+            w-3 h-3 sm:w-5 sm:h-5 bg-white rounded-full
+            flex items-center justify-center
+            text-xs sm:text-sm md:text-base font-bold text-red-800
           "
           >
             2
