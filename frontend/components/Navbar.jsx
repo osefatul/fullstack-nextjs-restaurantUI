@@ -60,7 +60,7 @@ function Navbar() {
       </div>
 
       <div>
-        <p></p>
+        <p className="text-lg font-serif text-white">WDK Pizza</p>
       </div>
 
       <div className="hidden md:flex items-center">
