@@ -13,8 +13,8 @@ function Navbar() {
       <div className="hidden md:flex items-center ">
         <div
           className="flex items-center justify-center
-         rounded-full bg-white
-         w-6 h-6 md:w-10 md:h-10 lg:w-12 lg:h-12  "
+          rounded-full bg-white
+          w-6 h-6 md:w-10 md:h-10 lg:w-12 lg:h-12  "
         >
           <img
             className="w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8"
