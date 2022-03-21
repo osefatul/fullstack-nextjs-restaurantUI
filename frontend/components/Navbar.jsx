@@ -28,9 +28,9 @@ function Navbar() {
       <div className="justify-start sm:hidden">
         <HiMenuAlt4 onClick={() => setToggle(true)} />
         {toggle && (
-          <div className=" grid ">
+          <div className="grid h-screen w-screen fixed top-0 left-0 z-50 bg-red-800 ">
             <HiX onClick={() => setToggle(false)} />
-            <ul>
+            <ul className="grid items-center justify-center space-y-5">
               {[
                 "Homepage",
                 "Products",
