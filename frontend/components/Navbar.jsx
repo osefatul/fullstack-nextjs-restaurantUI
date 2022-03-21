@@ -26,11 +26,14 @@ function Navbar() {
       </div>
 
       <div className="justify-start sm:hidden">
-        <HiMenuAlt4 onClick={() => setToggle(true)} />
+        <HiMenuAlt4
+          className="cursor-pointer"
+          onClick={() => setToggle(true)}
+        />
         {toggle && (
-          <div className="grid h-screen w-screen fixed top-0 left-0 z-50 bg-red-800 ">
-            <HiX onClick={() => setToggle(false)} />
-            <ul className="grid items-center justify-center space-y-5">
+          <div className=" h-screen w-screen fixed top-0 left-0 z-50 bg-orange-800 ">
+            <HiX className="cursor-pointer" onClick={() => setToggle(false)} />
+            <ul className="flex flex-col items-center justify-center space-y-3">
               {[
                 "Homepage",
                 "Products",
@@ -39,7 +42,11 @@ function Navbar() {
                 "Blogs",
                 "Contact",
               ].map((item, i) => (
-                <li key={i} onClick={() => setToggle(false)}>
+                <li
+                  className="hover:bg-red-800"
+                  key={i}
+                  onClick={() => setToggle(false)}
+                >
                   {item}
                 </li>
               ))}
