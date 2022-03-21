@@ -5,11 +5,18 @@ function Navbar() {
   return (
     <div className="flex items-center justify-between  h-24 bg-red-800 px-12 sticky top-0 z-50">
       <div className=" flex items-center ">
-        <div className="bg-white flex items-center justify-center rounded-full w-12 h-12  ">
-          <img className="w-8 h-8" src="/img/telephone.png"></img>
+        <div
+          className="flex items-center justify-center
+         rounded-full bg-white
+         w-6 h-6 md:w-10 md:h-10 lg:w-12 lg:h-12  "
+        >
+          <img
+            className="w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8"
+            src="/img/telephone.png"
+          ></img>
         </div>
 
-        <div className="ml-5 text-white justify-end font-bold">
+        <div className="ml-5 text-white text-xs sm:text-sm lg:text-lg font-bold justify-end">
           <div className="">ORDER NOW!</div>
           <div className="">012 345 678</div>
         </div>
