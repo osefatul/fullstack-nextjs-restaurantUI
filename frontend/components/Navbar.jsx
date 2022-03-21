@@ -6,7 +6,10 @@ function Navbar() {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <div className="flex items-center justify-between  h-24 bg-red-800 px-12 sticky top-0 z-50">
+    <div
+      className="flex items-center justify-between  
+    h-24 bg-red-800 px-12 sticky top-0 z-50"
+    >
       <div className="hidden sm:flex items-center ">
         <div
           className="flex items-center justify-center
@@ -25,6 +28,7 @@ function Navbar() {
         </div>
       </div>
 
+      {/* This for smaller screen */}
       <div className="justify-start sm:hidden">
         <HiMenuAlt4
           className="cursor-pointer"
@@ -33,7 +37,7 @@ function Navbar() {
         {toggle && (
           <div className=" h-screen w-screen fixed top-0 left-0 z-50 bg-orange-800 ">
             <HiX className="cursor-pointer" onClick={() => setToggle(false)} />
-            <ul className="flex flex-col items-center justify-center space-y-3">
+            <ul className="flex flex-col space-y-3">
               {[
                 "Homepage",
                 "Products",
@@ -43,7 +47,7 @@ function Navbar() {
                 "Contact",
               ].map((item, i) => (
                 <li
-                  className="hover:bg-red-800"
+                  className=" cursor-pointer hover:bg-red-800 w-screen flex items-center justify-center"
                   key={i}
                   onClick={() => setToggle(false)}
                 >
@@ -53,6 +57,10 @@ function Navbar() {
             </ul>
           </div>
         )}
+      </div>
+
+      <div>
+        <p></p>
       </div>
 
       <div className="hidden md:flex items-center">
