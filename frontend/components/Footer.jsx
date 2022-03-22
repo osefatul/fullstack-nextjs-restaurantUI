@@ -6,8 +6,8 @@ function Footer() {
       <div className="relative h-screen w-2/4">
         <h2 className="absolute text-center inset-y-[18rem] xl:inset-y-[24rem] md:inset-x-20  text-lg sm:text-xl md:text-xl lg:text-4xl xl:text-7xl ">
           <q className="text-[#ffd900d2]">
-            IF YOU DIDN'T LIKE IT, DON'T PAY US. WE GUARANTEE THE WDK PIZZA
-            TASTE
+            IF YOU DIDN'T LIKE IT, DON'T PAY FOR IT. WE ARE CONFIDENT OF THE WDK
+            PIZZA TASTE
           </q>
         </h2>
         <img
@@ -17,13 +17,13 @@ function Footer() {
         />
       </div>
 
-      <div className="flex flex-col items-center mx-auto py-[12rem] px-[4rem] md:py-[16rem] ">
-        <div className="flex flex-col py-16 items-center justify-center">
+      <div className="flex flex-col items-center mx-auto py-[12rem] px-[4rem] md:py-[16rem] text-white ">
+        <div className="flex flex-col py-16 items-center justify-center ">
           <div className="py-4 text-center">
-            <h1 className="text-4xl">FIND OUR RESTAURANTS</h1>
+            <h1 className="text-4xl text-white ">FIND OUR RESTAURANTS</h1>
           </div>
 
-          <div className="flex text space-x-10">
+          <div className="flex text-lg space-x-16">
             <p>
               63312 Skaha Road #621.
               <br />
@@ -56,17 +56,19 @@ function Footer() {
           </div>
         </div>
 
-        <div>
-          <h1>WORKING HOURS</h1>
-          <p>
-            MON-FRI <br />
-            10:30 - 22:00
-          </p>
+        <div className>
+          <h1 className="text-center text-white text-4xl">WORKING HOURS</h1>
+          <div className="flex text-lg text-center space-x-24">
+            <p>
+              MON-FRI <br />
+              10:30 - 22:00
+            </p>
 
-          <p>
-            SAT-SUN <br />
-            11:00 - 18:00
-          </p>
+            <p>
+              SAT-SUN <br />
+              11:00 - 18:00
+            </p>
+          </div>
         </div>
       </div>
     </div>
