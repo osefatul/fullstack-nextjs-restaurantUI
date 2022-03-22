@@ -7,7 +7,7 @@ function Navbar() {
 
   return (
     <div
-      className="flex items-center justify-between  
+      className="flex items-center justify-between align-center  
     h-24 bg-red-800 px-6 sm:px-12 sticky top-0 z-50"
     >
       <div className="hidden md:flex items-center ">
@@ -31,7 +31,7 @@ function Navbar() {
       {/* Navbar for smaller screen */}
       <div className="justify-start md:hidden">
         <HiMenuAlt4
-          className="cursor-pointer "
+          className="text-white text-lg cursor-pointer "
           onClick={() => setToggle(true)}
         />
         {toggle && (
@@ -41,7 +41,7 @@ function Navbar() {
             bg-orange-800  "
           >
             <HiX
-              className="cursor-pointer m-3"
+              className="cursor-pointer m-3 text-white text-lg"
               onClick={() => setToggle(false)}
             />
             <ul className="flex flex-col space-y-3 py-20 ">
@@ -54,7 +54,7 @@ function Navbar() {
                 "Contact",
               ].map((item, i) => (
                 <li
-                  className=" cursor-pointer hover:bg-red-800 w-screen flex items-center justify-center"
+                  className=" text-white cursor-pointer hover:bg-red-800 w-screen flex items-center justify-center"
                   key={i}
                   onClick={() => setToggle(false)}
                 >
@@ -68,8 +68,8 @@ function Navbar() {
 
       {/* Logo for smaller screen */}
 
-      <div className="flex md:hidden">
-        <p className=" text-lg font-serif text-white">WDK Pizza</p>
+      <div className="flex items-center justify-center text-lg font-serif text-white md:hidden">
+        WDK Pizza
       </div>
 
       {/* Navbar for bigger screen */}
