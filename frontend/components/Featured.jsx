@@ -14,7 +14,7 @@ function Featured() {
         {images.map((image, index) => (
           <div>
             <img
-              className="h-[350px] sm:h-[500px] md:h-[700px]  w-full bg-[#dfa322] object-contain"
+              className="h-[350px] sm:h-[500px] md:h-[700px]  w-full bg-[#e4a725] object-contain"
               src={image}
               alt=""
             />
