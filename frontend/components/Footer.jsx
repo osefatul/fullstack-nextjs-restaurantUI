@@ -3,13 +3,9 @@ import React from "react";
 function Footer() {
   return (
     <div className="flex h-almost bg-[#222] overflow-hidden z-50">
-      <div className="relative h-screen w-2/4">
-        <h2 className="absolute text-center inset-y-[18rem] xl:inset-y-[24rem] md:inset-x-20  text-lg sm:text-xl md:text-xl lg:text-4xl xl:text-7xl ">
-          <q className="text-[#ffd900d2]">
-            IF YOU DIDN'T LIKE IT, DON'T PAY FOR IT. WE ARE CONFIDENT OF THE WDK
-            PIZZA TASTE
-          </q>
-        </h2>
+      <div className="relative h-full w-2/4">
+        {/* className="absolute text-center inset-y-[20px] sm:inset-y-[10rem] md:inset-y-[18rem] xl:inset-y-[20rem] md:inset-x-20  text-xs sm:text-lg md:text-lg lg:text-lg xl:text-7xl " */}
+
         <img
           className="object-cover h-screen w-screen "
           src="/img/bg.png"
@@ -17,13 +13,26 @@ function Footer() {
         />
       </div>
 
-      <div className="flex flex-col items-center mx-auto py-[12rem] px-[4rem] md:py-[16rem] text-white ">
-        <div className="flex flex-col py-16 items-center justify-center ">
-          <div className="py-4 text-center">
-            <h1 className="text-4xl text-white ">FIND OUR RESTAURANTS</h1>
+      <div
+        className="flex flex-col items-center mx-auto 
+      py-[80px] xl:py-[2rem] 2xl:py-[12rem] px-[4rem] 
+      text-white overflow-auto scrollbar-hide"
+      >
+        <div className="flex flex-col items-center justify-center ">
+          <div className="mb-5 text-center space-y-11">
+            <h1 className="text-lg lg:text-xl xl:text-4xl 2xl:text-5xl">
+              <q className="text-[gold] ">
+                IF YOU DIDN'T LIKE IT, DON'T PAY FOR IT. WE ARE CONFIDENT OF THE
+                WDK PIZZA TASTE
+              </q>
+            </h1>
+            <div className=" w-1/4 h-0.5 mx-auto rounded-full bg-[gold]" />
+            <h1 className="text-lg lg:text-xl xl:text-4xl text-white ">
+              FIND OUR RESTAURANTS
+            </h1>
           </div>
 
-          <div className="flex text-lg space-x-16">
+          <div className="flex text:sm lg:text-lg space-x-16">
             <p>
               63312 Skaha Road #621.
               <br />
@@ -56,9 +65,12 @@ function Footer() {
           </div>
         </div>
 
-        <div className>
-          <h1 className="text-center text-white text-4xl">WORKING HOURS</h1>
-          <div className="flex text-lg text-center space-x-24">
+        <div className="mt-10 ">
+          <h1 className="text-center text-white text-lg lg:text-xl xl:text-4xl">
+            WORKING HOURS
+          </h1>
+
+          <div className="flex text:sm lg:text-lg text-center space-x-24">
             <p>
               MON-FRI <br />
               10:30 - 22:00
