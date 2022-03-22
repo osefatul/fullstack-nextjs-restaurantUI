@@ -38,7 +38,7 @@ function Navbar() {
           <div
             className="h-screen w-screen
             fixed top-0 left-0 z-50 
-            bg-orange-800  "
+            bg-[#e4a725]  "
           >
             <HiX
               className="cursor-pointer m-3 text-white text-lg"

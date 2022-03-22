@@ -2,8 +2,8 @@ import React from "react";
 import PizzaCard from "./PizzaCard";
 function PizzaList() {
   return (
-    <div className="flex flex-col items-center py-5 px-3 ">
-      <h1 className="text-xl">THE BEST PIZZA IN TOWN</h1>
+    <div className="flex flex-col items-center py-6 px-3 bg-[#dab76b] ">
+      <h1 className="text-4xl text-black">THE BEST PIZZA IN TOWN</h1>
       <p className="text-lg text-[#444] w-3/4 text-center sm:text-justify">
         Take the guesswork out of gift-giving! Select your gift card value up to
         $100 and send it today or on a date of your choice. No contact delivery
