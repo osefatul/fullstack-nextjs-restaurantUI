@@ -2,7 +2,7 @@ import React from "react";
 import PizzaCard from "./PizzaCard";
 function PizzaList() {
   return (
-    <div className="flex flex-col items-center py-6 px-3 bg-[#dab76b] ">
+    <div className="flex flex-col items-center py-6 px-3 bg-white ">
       <h1 className="text-4xl text-black">THE BEST PIZZA IN TOWN</h1>
       <p className="text-lg text-[#444] w-3/4 text-center sm:text-justify">
         Take the guesswork out of gift-giving! Select your gift card value up to
@@ -11,6 +11,14 @@ function PizzaList() {
         limited personal interaction.
       </p>
       <div className="w-full flex items-center justify-center flex-wrap">
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
         <PizzaCard />
       </div>
     </div>
