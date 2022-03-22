@@ -14,5 +14,7 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
+
+// We installed  `npm install tailwind-scrollbar-hide` to hide scrollbar and then added it to plygins

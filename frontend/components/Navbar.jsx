@@ -28,6 +28,26 @@ function Navbar() {
         </div>
       </div>
 
+      {/* Navbar for bigger screen */}
+
+      <div className="hidden md:flex items-center">
+        <ul
+          className="flex flex-1 items-center list-none text-white 
+        space-x-1 md:space-x-4 lg:space-x-6 xl:space-x-10 "
+        >
+          {["Homepage", "Products", "Menu", "Events", "Blogs", "Contact"].map(
+            (item, i) => (
+              <li
+                className="text-white text-xs sm:text-sm  lg:text-2xl cursor-pointer hover:text-3xl"
+                key={i}
+              >
+                {item}
+              </li>
+            )
+          )}
+        </ul>
+      </div>
+
       {/* Navbar for smaller screen */}
       <div className="justify-start md:hidden">
         <HiMenuAlt4
@@ -54,7 +74,7 @@ function Navbar() {
                 "Contact",
               ].map((item, i) => (
                 <li
-                  className=" text-white cursor-pointer hover:bg-red-800 w-screen flex items-center justify-center"
+                  className=" text-black text-2xl cursor-pointer hover:bg-red-800 w-screen flex items-center justify-center"
                   key={i}
                   onClick={() => setToggle(false)}
                 >
@@ -67,24 +87,8 @@ function Navbar() {
       </div>
 
       {/* Logo for smaller screen */}
-
       <div className="flex items-center justify-center text-lg font-serif text-white md:hidden">
         WDK Pizza
-      </div>
-
-      {/* Navbar for bigger screen */}
-
-      <div className="hidden md:flex items-center">
-        <ul
-          className="flex flex-1 items-center list-none text-white 
-        space-x-1 md:space-x-4 lg:space-x-6 xl:space-x-10 "
-        >
-          {["Homepage", "Products", "Menu", "Events", "Blogs", "Contact"].map(
-            (item, i) => (
-              <li key={i}>{item}</li>
-            )
-          )}
-        </ul>
       </div>
 
       {/* Cart smaller and bigger screen  */}
