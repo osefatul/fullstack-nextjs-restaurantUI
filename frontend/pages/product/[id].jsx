@@ -19,13 +19,11 @@ function Product() {
         {/* </div> */}
       </div>
       {/* Right */}
-      <div className="py-4 h-full w-full pr-20 pl-5 mx-auto  overflow-auto scrollbar-hide">
+      <div className=" text-black py-4 h-full w-full pr-20 pl-5 space-y-4 mx-auto overflow-auto scrollbar-hide">
         <div className="flex flex-col py-6 space-y-5 text-center md:text-left">
-          <h1 className=" text-black text-4xl md:text-5xl font-bold">
-            {pizza.name}
-          </h1>
-          <span className="text-[#d1411e] text-xl font-bold border-b-2 w-10 border-[#d1411e]">
-            {pizza.price[size]}
+          <h1 className=" text-4xl md:text-5xl font-bold">{pizza.name}</h1>
+          <span className="text-[#d1411e] text-2xl border-b-2 w-14 border-[#d1411e]">
+            {`$${pizza.price[size]}`}
           </span>
           <p className="text-lg md:text-xl xl:text-2xl 3xl:text-4xl ">
             {pizza.desc}
@@ -33,10 +31,10 @@ function Product() {
         </div>
 
         {/* sizes */}
-        <h3 className=" text-black text-xl md:text-2xl font-bold xl:text-4xl pb-4">
+        <h3 className="  text-xl md:text-2xl font-bold xl:text-4xl pb-4">
           Choose the size
         </h3>
-        <div className="flex items-center justify-between w-full space-x-4 pb-20">
+        <div className="flex items-center w-full space-x-20 pb-20">
           <div
             className="w-[12rem] space-y-4 flex flex-col items-center justify-center relative"
             onClick={() => setSize(0)}
@@ -60,10 +58,12 @@ function Product() {
           </div>
         </div>
 
-        <h3 className=" text-2xl pb-4">Choose Additional Ingredients</h3>
+        <h3 className=" text-xl md:text-2xl font-bold xl:text-4xl pb-4">
+          Choose Additional Ingredients
+        </h3>
 
         {/* Ingredients */}
-        <div className="">
+        <div className="text-lg ">
           <div>
             <div>
               <input type="checkbox" id="double" name="double" />
