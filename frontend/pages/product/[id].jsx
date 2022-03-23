@@ -11,61 +11,79 @@ function Product() {
   };
 
   return (
-    <div className="h-almost flex py-5">
+    <div className="h-almost flex flex-col md:flex-row items-center justify-center mx-auto py-5 overflow-auto scrollbar-hide ">
       {/* Left */}
-      <div className="flex items-center justify-center h-full w-[40%]">
-        <div className="h-5/6 w-5/6 relative">
-          <img className="object-contain" src={pizza.img} alt="" />
-        </div>
+      <div className="flex items-center md:items-start py-0 md:py-16 justify-center h-full md:h-5/6 w-4/6 md:w-4/6 overflow-auto scrollbar-hide">
+        {/* <div className="flex items-center justify- h-5/6 w-full relative"> */}
+        <img className="object-contain" src={pizza.img} alt="" />
+        {/* </div> */}
       </div>
       {/* Right */}
-      <div className="p-5">
-        <h1 className="text-3xl">{pizza.name}</h1>
-        <span className="text-[#d1411e] text-xl font-normal border-b-2 border-[#d1411e]">
-          {pizza.price[size]}
-        </span>
-        <p>{pizza.desc}</p>
-        <h3>Choose the size</h3>
+      <div className="py-4 h-full w-full pr-20 pl-5 items-center justify-center  overflow-auto scrollbar-hide mx-auto">
+        <div className="flex flex-col py-6 text-center md:text-left">
+          <h1 className=" flex items-center justify-center text-3xl">
+            {pizza.name}
+          </h1>
+          <span className="text-[#d1411e] mx-auto text-xl font-normal border-b-2 w-12 border-[#d1411e]">
+            {pizza.price[size]}
+          </span>
+          <p className="text-lg md:text-xl xl:text-2xl 3xl:text-4xl mx-auto">
+            {" "}
+            {pizza.desc}
+          </p>
+        </div>
 
         {/* sizes */}
-        <div>
-          <div>
+        <h3 className=" text-2xl pb-4">Choose the size</h3>
+        <div className="flex items-center justify-center w-full space-x-6 pb-20">
+          <div
+            className="w-[12rem] space-y-4 flex flex-col items-center justify-center"
+            onClick={() => setSize(0)}
+          >
             <img src="/img/size.png" alt="" />
             <span>Small</span>
           </div>
-          <div>
+          <div
+            className="w-[16rem] space-y-4 flex flex-col items-center justify-center"
+            onClick={() => setSize(1)}
+          >
             <img src="/img/size.png" alt="" />
             <span>Medium</span>
           </div>
-          <div>
+          <div
+            className="w-[20rem] space-y-4 flex flex-col items-center justify-center"
+            onClick={() => setSize(2)}
+          >
             <img src="/img/size.png" alt="" />
             <span>Large</span>
           </div>
         </div>
 
-        <h3>Choose Additional Ingredients</h3>
+        <h3 className=" text-2xl pb-4">Choose Additional Ingredients</h3>
 
         {/* Ingredients */}
-        <div>
+        <div className="">
           <div>
-            <input type="checkbox" id="double" name="double" />
-            <label htmlFor="double">Double Ingredients</label>
-          </div>
-          <div>
-            <input type="checkbox" id="cheese" name="cheese" />
-            <label htmlFor="cheese">Extra Cheese</label>
-          </div>
-          <div>
-            <input type="checkbox" id="spicy" name="spicy" />
-            <label htmlFor="spicy">Spizy Sauce</label>
-          </div>
-          <div>
-            <input type="checkbox" id="garlic" name="garlic" />
-            <label htmlFor="garlic">Garlic Sauce</label>
+            <div>
+              <input type="checkbox" id="double" name="double" />
+              <label htmlFor="double">Double Ingredients</label>
+            </div>
+            <div>
+              <input type="checkbox" id="cheese" name="cheese" />
+              <label htmlFor="cheese">Extra Cheese</label>
+            </div>
+            <div>
+              <input type="checkbox" id="spicy" name="spicy" />
+              <label htmlFor="spicy">Spizy Sauce</label>
+            </div>
+            <div>
+              <input type="checkbox" id="garlic" name="garlic" />
+              <label htmlFor="garlic">Garlic Sauce</label>
+            </div>
           </div>
         </div>
 
-        <div>
+        <div className=" py-10">
           <input type="number" defaultValue={1} />
           <button>Add to Cart</button>
         </div>
