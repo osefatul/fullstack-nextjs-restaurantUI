@@ -13,9 +13,9 @@ function Product() {
   return (
     <div className="h-almost flex flex-col md:flex-row items-center justify-center mx-auto py-5 overflow-auto scrollbar-hide">
       {/* Left */}
-      <div className="flex items-center md:items-start py-0 md:py-16 px-16 justify-center h-full md:h-5/6 w-full md:w-3/6 overflow-auto scrollbar-hide">
+      <div className="flex items-center md:items-start py-0 md:py-16 px-16 justify-center h-full md:h-5/6 md:w-3/6 mx-auto overflow-auto scrollbar-hide">
         {/* <div className="flex items-center justify- h-5/6 w-full relative"> */}
-        <img className=" w-full object-contain" src={pizza.img} alt="" />
+        <img className=" object-contain" src={pizza.img} alt="" />
         {/* </div> */}
       </div>
       {/* Right */}
@@ -27,43 +27,47 @@ function Product() {
           <span className="text-[#d1411e] text-lg md:text-2xl border-b-2 w-14 border-[#d1411e]">
             {`$${pizza.price[size]}`}
           </span>
-          <p className="text-sm md:text-xl xl:text-2xl 3xl:text-4xl ">
+          <p className="text-sm md:text-lg lg:text-xl xl:text-2xl 3xl:text-4xl ">
             {pizza.desc}
           </p>
         </div>
 
         {/* sizes */}
-        <h3 className="text-xl md:text-2xl font-bold xl:text-4xl pb-4">
+        <h3 className="text-xl md:text-2xl font-bold xl:text-4xl pb-2">
           Choose the size:
         </h3>
 
-        <div className="flex flex-col sm:flex-row items-center w-full space-y-12 justify-center sm:space-x-20 pb-20">
+        <div className="flex flex-col sm:flex-row items-center justify-center pb-16">
           <div
-            className=" w-3/6 space-y-4 flex flex-col items-center justify-center relative"
+            className=" w-3/6 space-y-4 flex flex-col items-center justify-center relative mb-5 sm:mb-0  sm:mr-5"
             onClick={() => setSize(0)}
           >
-            <img className="w-full" src="/img/size.png" alt="" />
-            <span className="absolute top-[-10px] right-[-3px] w-[40%] text-xs sm:text-sm lg:text-lg text-white bg-[teal] flex items-center justify-center rounded-full">
+            <img className="w-[10rem]" src="/img/size.png" alt="" />
+            {/* <span className="absolute top-[-20px] right-[-23px] w-[4rem] text-xs sm:text-sm lg:text-lg text-white bg-[teal] flex items-center justify-center rounded-full">
               Small
-            </span>
+            </span> */}
           </div>
           <div
-            className=" w-4/6 space-y-4 flex flex-col items-center justify-center relative"
+            className=" w-4/6 space-y-4 flex flex-col items-center justify-center relative mb-5 sm:mb-0  sm:mr-5"
             onClick={() => setSize(1)}
           >
-            <img className="w-full" src="/img/size.png" alt="" />
-            <span className="absolute top-[-16px] right-[-3px] w-[50%] text-xs sm:text-sm lg:text-lg h-8 text-white bg-[teal] flex items-center justify-center rounded-full">
+            <img
+              className=" w-[12rem] justify-self-center"
+              src="/img/size.png"
+              alt=""
+            />
+            {/* <span className="absolute top-[-22px] right-[-20px] w-[5rem] text-xs sm:text-sm lg:text-lg h-8 text-white bg-[teal] flex items-center justify-center rounded-full">
               Medium
-            </span>
+            </span> */}
           </div>
           <div
-            className="w-5/6 space-y-4 flex flex-col items-center justify-center relative"
+            className=" w-5/6 space-y-4 flex flex-col items-center justify-center relative mb-5 sm:mb-0 sm:mr-5 "
             onClick={() => setSize(2)}
           >
-            <img className="w-full" src="/img/size.png" alt="" />
-            <span className="absolute top-[-18px] right-[-6px] w-[45%] h-8 text-xs sm:text-sm lg:text-lg text-white bg-[teal] flex items-center justify-center rounded-full">
+            <img className="w-[14rem] " src="/img/size.png" alt="" />
+            {/* <span className="absolute top-[-18px] right-[-6px] w-[4rem] h-8 text-xs sm:text-sm lg:text-lg text-white bg-[teal] flex items-center justify-center rounded-full">
               Large
-            </span>
+            </span> */}
           </div>
         </div>
 
@@ -72,27 +76,27 @@ function Product() {
         </h3>
 
         {/* Ingredients */}
-        <div className="text-lg md:text-xl lg:text-2xl font-normal ">
+        <div className="text-xs md:text-sm lg:text-lg xl:text-2xl font-normal ">
           <div className="flex flex-col sm:flex-row items-start  ">
-            <div className="text-sm sm:text-lg md:text-xl lg:text-2xl flex items-center mr-5  ">
+            <div className=" flex items-center mb-1 sm:mr-5">
               <input
-                className="w-6 h-6 mr-1"
+                className="w-6 h-6 mr-2"
                 type="checkbox"
                 id="double"
                 name="double"
               />
               <label htmlFor="double">Double Ingredients</label>
             </div>
-            <div className="text-sm sm:text-lg md:text-xl lg:text-2xl flex items-center  ">
+            <div className="flex items-center mb-1 mr-5  ">
               <input
-                className="w-6 h-6 mr-1"
+                className="w-6 h-6 mr-2"
                 type="checkbox"
                 id="cheese"
                 name="cheese"
               />
               <label htmlFor="cheese">Extra Cheese</label>
             </div>
-            <div className="text-sm sm:text-lg md:text-xl lg:text-2xl flex items-center  ">
+            <div className=" flex items-center mb-1 mr-5 ">
               <input
                 className="w-6 h-6 mr-2"
                 type="checkbox"
@@ -101,7 +105,7 @@ function Product() {
               />
               <label htmlFor="spicy">Spizy Sauce</label>
             </div>
-            <div className="text-sm sm:text-lg md:text-xl lg:text-2xl flex items-center  ">
+            <div className="flex items-center mb-1 mr-5 ">
               <input
                 className="w-6 h-6 mr-2"
                 type="checkbox"
@@ -113,9 +117,15 @@ function Product() {
           </div>
         </div>
 
-        <div className=" py-10">
-          <input className="w-10 h-10 " type="number" defaultValue={1} />
-          <button>Add to Cart</button>
+        <div className=" space-x-1">
+          <input
+            className="w-8 h-8 border-black border rounded "
+            type="number"
+            defaultValue={1}
+          />
+          <button className=" h-8 w-24 border-black rounded-full bg-[teal] cursor-pointer">
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>

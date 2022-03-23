@@ -14,11 +14,11 @@ function Footer() {
       </div>
 
       <div
-        className="flex flex-col items-center mx-auto 
-      py-[80px] xl:py-[2rem] 2xl:py-[12rem] px-[4rem] 
+        className="flex flex-col items-center mx-auto  w-full
+      py-[80px] xl:py-[2rem] 2xl:py-[12rem] ml-10 px-[4rem] 
       text-white overflow-auto scrollbar-hide"
       >
-        <div className="flex flex-col items-center justify-center ">
+        <div className="flex flex-col items-center justify-center w-full">
           <div className="mb-5 text-center space-y-11">
             <h1 className="text-lg lg:text-xl xl:text-4xl 2xl:text-5xl">
               <q className="text-[gold] ">
@@ -27,12 +27,12 @@ function Footer() {
               </q>
             </h1>
             <div className=" w-1/4 h-0.5 mx-auto rounded-full bg-[gold]" />
-            <h1 className="text-lg lg:text-xl xl:text-4xl text-white ">
+            <h1 className="text-lg lg:text-xl xl:text-4xl text-white w-full ">
               FIND OUR RESTAURANTS
             </h1>
           </div>
 
-          <div className="flex text:sm lg:text-lg space-x-16">
+          <div className="flex text:sm lg:text-lg space-x-16 w-full">
             <p>
               63312 Skaha Road #621.
               <br />
