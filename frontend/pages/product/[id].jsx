@@ -11,16 +11,16 @@ function Product() {
   };
 
   return (
-    <div className="h-almost flex flex-col md:flex-row items-center justify-center mx-auto py-5 overflow-auto scrollbar-hide bg-white">
+    <div className="h-almost flex flex-col md:flex-row items-center justify-center mx-auto py-5 overflow-auto scrollbar-hide">
       {/* Left */}
-      <div className="flex items-center md:items-start py-0 md:py-16 justify-center h-full md:h-5/6 w-4/6 md:w-4/6 overflow-auto scrollbar-hide">
+      <div className="flex items-center md:items-start py-0 md:py-16 px-16 justify-center h-full md:h-5/6 w-full md:w-3/6 overflow-auto scrollbar-hide">
         {/* <div className="flex items-center justify- h-5/6 w-full relative"> */}
-        <img className="object-contain" src={pizza.img} alt="" />
+        <img className=" w-full object-contain" src={pizza.img} alt="" />
         {/* </div> */}
       </div>
       {/* Right */}
-      <div className=" text-black py-4 h-full w-full pr-24 pl-5 space-y-4 overflow-auto scrollbar-hide">
-        <div className="flex flex-col py-6 space-y-5 text-center md:text-left">
+      <div className=" text-black py-4 h-full w-full px-16 sm:pr-24 sm:pl-10 space-y-4 mx-auto overflow-auto scrollbar-hide">
+        <div className="flex flex-col  py-6 space-y-5  md:text-left">
           <h1 className=" text-4xl md:text-5xl font-bold">{pizza.name}</h1>
           <span className="text-[#d1411e] text-2xl border-b-2 w-14 border-[#d1411e]">
             {`$${pizza.price[size]}`}
@@ -40,7 +40,7 @@ function Product() {
             onClick={() => setSize(0)}
           >
             <img src="/img/size.png" alt="" />
-            <span className="absolute top-[-10px] right-[-3px] w-[40%] text-lg text-white bg-[teal] flex items-center justify-center rounded-full">
+            <span className="absolute top-[-10px] right-[-3px] w-[40%] text-xs sm:text-sm lg:text-lg text-white bg-[teal] flex items-center justify-center rounded-full">
               Small
             </span>
           </div>
@@ -49,7 +49,7 @@ function Product() {
             onClick={() => setSize(1)}
           >
             <img src="/img/size.png" alt="" />
-            <span className="absolute top-[-16px] right-[-3px] w-[42%] text-xl h-8 text-white bg-[teal] flex items-center justify-center rounded-full">
+            <span className="absolute top-[-16px] right-[-3px] w-[50%] text-xs sm:text-sm lg:text-lg h-8 text-white bg-[teal] flex items-center justify-center rounded-full">
               Medium
             </span>
           </div>
@@ -58,7 +58,7 @@ function Product() {
             onClick={() => setSize(2)}
           >
             <img src="/img/size.png" alt="" />
-            <span className="absolute top-[-18px] right-[-6px] w-[45%] h-8 text-xl text-white bg-[teal] flex items-center justify-center rounded-full">
+            <span className="absolute top-[-18px] right-[-6px] w-[45%] h-8 text-xs sm:text-sm lg:text-lg text-white bg-[teal] flex items-center justify-center rounded-full">
               Large
             </span>
           </div>
@@ -69,29 +69,49 @@ function Product() {
         </h3>
 
         {/* Ingredients */}
-        <div className="text-lg ">
-          <div>
-            <div>
-              <input type="checkbox" id="double" name="double" />
+        <div className="text-lg md:text-xl lg:text-2xl font-normal ">
+          <div className="flex flex-col sm:flex-row  items-start ">
+            <div className="text-sm sm:text-lg md:text-xl lg:text-2xl flex items-center  ">
+              <input
+                className="w-6 h-6 mr-2"
+                type="checkbox"
+                id="double"
+                name="double"
+              />
               <label htmlFor="double">Double Ingredients</label>
             </div>
-            <div>
-              <input type="checkbox" id="cheese" name="cheese" />
+            <div className="text-sm sm:text-lg md:text-xl lg:text-2xl flex items-center  ">
+              <input
+                className="w-6 h-6 mr-2"
+                type="checkbox"
+                id="cheese"
+                name="cheese"
+              />
               <label htmlFor="cheese">Extra Cheese</label>
             </div>
-            <div>
-              <input type="checkbox" id="spicy" name="spicy" />
+            <div className="text-sm sm:text-lg md:text-xl lg:text-2xl flex items-center  ">
+              <input
+                className="w-6 h-6 mr-2"
+                type="checkbox"
+                id="spicy"
+                name="spicy"
+              />
               <label htmlFor="spicy">Spizy Sauce</label>
             </div>
-            <div>
-              <input type="checkbox" id="garlic" name="garlic" />
+            <div className="text-sm sm:text-lg md:text-xl lg:text-2xl flex items-center  ">
+              <input
+                className="w-6 h-6 mr-2"
+                type="checkbox"
+                id="garlic"
+                name="garlic"
+              />
               <label htmlFor="garlic">Garlic Sauce</label>
             </div>
           </div>
         </div>
 
         <div className=" py-10">
-          <input type="number" defaultValue={1} />
+          <input className="w-10 h-10 " type="number" defaultValue={1} />
           <button>Add to Cart</button>
         </div>
       </div>
