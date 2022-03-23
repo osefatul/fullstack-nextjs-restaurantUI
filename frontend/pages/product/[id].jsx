@@ -19,7 +19,7 @@ function Product() {
         {/* </div> */}
       </div>
       {/* Right */}
-      <div className=" text-black py-4 h-full w-full pr-20 pl-5 space-y-4 mx-auto overflow-auto scrollbar-hide">
+      <div className=" text-black py-4 h-full w-full pr-24 pl-5 space-y-4 overflow-auto scrollbar-hide">
         <div className="flex flex-col py-6 space-y-5 text-center md:text-left">
           <h1 className=" text-4xl md:text-5xl font-bold">{pizza.name}</h1>
           <span className="text-[#d1411e] text-2xl border-b-2 w-14 border-[#d1411e]">
@@ -40,21 +40,27 @@ function Product() {
             onClick={() => setSize(0)}
           >
             <img src="/img/size.png" alt="" />
-            <span>Small</span>
+            <span className="absolute top-[-10px] right-[-3px] w-[40%] text-lg text-white bg-[teal] flex items-center justify-center">
+              Small
+            </span>
           </div>
           <div
-            className="w-[16rem] space-y-4 flex flex-col items-center justify-center"
+            className="w-[16rem] space-y-4 flex flex-col items-center justify-center relative"
             onClick={() => setSize(1)}
           >
             <img src="/img/size.png" alt="" />
-            <span>Medium</span>
+            <span className="absolute top-[-10px] right-[-3px] w-[40%] text-xl text-white bg-[teal] flex items-center justify-center">
+              Medium
+            </span>
           </div>
           <div
-            className="w-[20rem] space-y-4 flex flex-col items-center justify-center"
+            className="w-[20rem] space-y-4 flex flex-col items-center justify-center relative"
             onClick={() => setSize(2)}
           >
             <img src="/img/size.png" alt="" />
-            <span>Large</span>
+            <span className="absolute top-[-10px] right-[-3px] w-[40%] text-xl text-white bg-[teal] flex items-center justify-center">
+              Large
+            </span>
           </div>
         </div>
 
