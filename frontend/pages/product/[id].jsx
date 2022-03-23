@@ -13,18 +13,18 @@ function Product() {
   return (
     <div className="h-almost flex flex-col md:flex-row items-center justify-center mx-auto py-5 overflow-auto scrollbar-hide">
       {/* Left */}
-      <div className="flex items-center md:items-start py-0 md:py-16 px-16 justify-center h-full md:h-5/6 md:w-3/6 mx-auto overflow-auto scrollbar-hide">
+      <div className="flex items-center md:items-start py-0 md:py-16 px-16 justify-center h-full md:h-5/6 w-[80%] md:w-[30%]  overflow-auto scrollbar-hide">
         {/* <div className="flex items-center justify- h-5/6 w-full relative"> */}
         <img className=" object-contain" src={pizza.img} alt="" />
         {/* </div> */}
       </div>
       {/* Right */}
-      <div className=" text-black py-4 h-full w-full px-16 sm:pr-24 sm:pl-10 space-y-4 mx-auto overflow-auto scrollbar-hide">
-        <div className="flex flex-col  py-6 space-y-5  md:text-left">
-          <h1 className=" text-xl sm:text-2xl md:text-5xl font-bold">
+      <div className=" text-black py-4 h-full  px-16 sm:pr-24 sm:pl-10 md:w-[70rem] space-y-4 overflow-auto scrollbar-hide">
+        <div className="flex flex-col  py-6 space-y-5 md:text-left">
+          <h1 className=" text-xl sm:text-2xl md:text-5xl font-bold text-center md:text-left">
             {pizza.name}
           </h1>
-          <span className="text-[#d1411e] text-lg md:text-2xl border-b-2 w-14 border-[#d1411e]">
+          <span className="text-[#d1411e] text-lg md:text-2xl border-b-2 w-14 border-[#d1411e]  place-self-center md:place-self-start">
             {`$${pizza.price[size]}`}
           </span>
           <p className="text-sm md:text-lg lg:text-xl xl:text-2xl 3xl:text-4xl ">
@@ -37,9 +37,9 @@ function Product() {
           Choose the size:
         </h3>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center pb-16">
+        <div className="flex flex-col md:flex-row items-center justify-center ">
           <div
-            className=" w-3/6 space-y-4 flex flex-col items-center justify-center relative mb-5 sm:mb-0  sm:mr-5"
+            className=" w-3/6 space-y-4 flex flex-col items-center justify-center relative mb-5 md:mb-0  sm:mr-5"
             onClick={() => setSize(0)}
           >
             <img className="w-[10rem]" src="/img/size.png" alt="" />
@@ -48,7 +48,7 @@ function Product() {
             </span> */}
           </div>
           <div
-            className=" w-4/6 space-y-4 flex flex-col items-center justify-center relative mb-5 sm:mb-0  sm:mr-5"
+            className=" w-4/6 space-y-4 flex flex-col items-center justify-center relative mb-5 md:mb-0  sm:mr-5"
             onClick={() => setSize(1)}
           >
             <img
@@ -123,7 +123,7 @@ function Product() {
             type="number"
             defaultValue={1}
           />
-          <button className=" h-8 w-24 border-black rounded-full bg-[teal] cursor-pointer">
+          <button className=" h-8 w-28 rounded bg-[teal] cursor-pointer">
             Add to Cart
           </button>
         </div>

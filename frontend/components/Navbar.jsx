@@ -38,7 +38,7 @@ function Navbar() {
           {["Homepage", "Products", "Menu", "Events", "Blogs", "Contact"].map(
             (item, i) => (
               <li
-                className="text-white text-xs sm:text-sm  lg:text-2xl cursor-pointer hover:text-3xl"
+                className="text-white text-xs sm:text-sm  lg:text-2xl cursor-pointer hover:text-stone-400"
                 key={i}
               >
                 {item}

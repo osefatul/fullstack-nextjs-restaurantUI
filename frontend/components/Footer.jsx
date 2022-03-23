@@ -32,9 +32,12 @@ function Footer() {
             </h1>
           </div>
 
-          <div className="flex text:sm lg:text-lg space-x-16 w-full">
-            <p>
-              63312 Skaha Road #621.
+          <div
+            className=" flex flex-col md:flex-row w-full
+          text:sm lg:text-lg space-y-5 md:space-x-10 text-center"
+          >
+            <p className="mt-4">
+              63312 Skaha Road#621.
               <br />
               Richmond, 85022.
               <br />
@@ -42,21 +45,21 @@ function Footer() {
             </p>
 
             <p>
-              3312 William Road #621.
+              3312 William Road#621.
               <br />
               Delta, 8022.
               <br />
               202-404-4076
             </p>
             <p>
-              3112 Omar Road #621.
+              3112 Omar Road#621.
               <br />
               Vancouver, 85022.
               <br />
               232-234-9760
             </p>
             <p>
-              1312 Guru Road #621.
+              1312 Guru Road#621.
               <br />
               Surrey, 85022.
               <br />
@@ -70,8 +73,8 @@ function Footer() {
             WORKING HOURS
           </h1>
 
-          <div className="flex text:sm lg:text-lg text-center space-x-24">
-            <p>
+          <div className="flex flex-col md:flex-row text:sm lg:text-lg text-center space-y-4 md:space-x-24">
+            <p className="mt-4">
               MON-FRI <br />
               10:30 - 22:00
             </p>
