@@ -40,7 +40,7 @@ function Product() {
             onClick={() => setSize(0)}
           >
             <img src="/img/size.png" alt="" />
-            <span className="absolute top-[-10px] right-[-3px] w-[40%] text-lg text-white bg-[teal] flex items-center justify-center">
+            <span className="absolute top-[-10px] right-[-3px] w-[40%] text-lg text-white bg-[teal] flex items-center justify-center rounded-full">
               Small
             </span>
           </div>
@@ -49,7 +49,7 @@ function Product() {
             onClick={() => setSize(1)}
           >
             <img src="/img/size.png" alt="" />
-            <span className="absolute top-[-10px] right-[-3px] w-[40%] text-xl text-white bg-[teal] flex items-center justify-center">
+            <span className="absolute top-[-16px] right-[-3px] w-[42%] text-xl h-8 text-white bg-[teal] flex items-center justify-center rounded-full">
               Medium
             </span>
           </div>
@@ -58,7 +58,7 @@ function Product() {
             onClick={() => setSize(2)}
           >
             <img src="/img/size.png" alt="" />
-            <span className="absolute top-[-10px] right-[-3px] w-[40%] text-xl text-white bg-[teal] flex items-center justify-center">
+            <span className="absolute top-[-18px] right-[-6px] w-[45%] h-8 text-xl text-white bg-[teal] flex items-center justify-center rounded-full">
               Large
             </span>
           </div>
