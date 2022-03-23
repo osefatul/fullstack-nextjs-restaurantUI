@@ -21,43 +21,46 @@ function Product() {
       {/* Right */}
       <div className=" text-black py-4 h-full w-full px-16 sm:pr-24 sm:pl-10 space-y-4 mx-auto overflow-auto scrollbar-hide">
         <div className="flex flex-col  py-6 space-y-5  md:text-left">
-          <h1 className=" text-4xl md:text-5xl font-bold">{pizza.name}</h1>
-          <span className="text-[#d1411e] text-2xl border-b-2 w-14 border-[#d1411e]">
+          <h1 className=" text-xl sm:text-2xl md:text-5xl font-bold">
+            {pizza.name}
+          </h1>
+          <span className="text-[#d1411e] text-lg md:text-2xl border-b-2 w-14 border-[#d1411e]">
             {`$${pizza.price[size]}`}
           </span>
-          <p className="text-lg md:text-xl xl:text-2xl 3xl:text-4xl ">
+          <p className="text-sm md:text-xl xl:text-2xl 3xl:text-4xl ">
             {pizza.desc}
           </p>
         </div>
 
         {/* sizes */}
-        <h3 className="  text-xl md:text-2xl font-bold xl:text-4xl pb-4">
-          Choose the size
+        <h3 className="text-xl md:text-2xl font-bold xl:text-4xl pb-4">
+          Choose the size:
         </h3>
-        <div className="flex items-center w-full space-x-20 pb-20">
+
+        <div className="flex flex-col sm:flex-row items-center w-full space-y-12 justify-center sm:space-x-20 pb-20">
           <div
-            className="w-[12rem] space-y-4 flex flex-col items-center justify-center relative"
+            className=" w-3/6 space-y-4 flex flex-col items-center justify-center relative"
             onClick={() => setSize(0)}
           >
-            <img src="/img/size.png" alt="" />
+            <img className="w-full" src="/img/size.png" alt="" />
             <span className="absolute top-[-10px] right-[-3px] w-[40%] text-xs sm:text-sm lg:text-lg text-white bg-[teal] flex items-center justify-center rounded-full">
               Small
             </span>
           </div>
           <div
-            className="w-[16rem] space-y-4 flex flex-col items-center justify-center relative"
+            className=" w-4/6 space-y-4 flex flex-col items-center justify-center relative"
             onClick={() => setSize(1)}
           >
-            <img src="/img/size.png" alt="" />
+            <img className="w-full" src="/img/size.png" alt="" />
             <span className="absolute top-[-16px] right-[-3px] w-[50%] text-xs sm:text-sm lg:text-lg h-8 text-white bg-[teal] flex items-center justify-center rounded-full">
               Medium
             </span>
           </div>
           <div
-            className="w-[20rem] space-y-4 flex flex-col items-center justify-center relative"
+            className="w-5/6 space-y-4 flex flex-col items-center justify-center relative"
             onClick={() => setSize(2)}
           >
-            <img src="/img/size.png" alt="" />
+            <img className="w-full" src="/img/size.png" alt="" />
             <span className="absolute top-[-18px] right-[-6px] w-[45%] h-8 text-xs sm:text-sm lg:text-lg text-white bg-[teal] flex items-center justify-center rounded-full">
               Large
             </span>
@@ -70,10 +73,10 @@ function Product() {
 
         {/* Ingredients */}
         <div className="text-lg md:text-xl lg:text-2xl font-normal ">
-          <div className="flex flex-col sm:flex-row  items-start ">
-            <div className="text-sm sm:text-lg md:text-xl lg:text-2xl flex items-center  ">
+          <div className="flex flex-col sm:flex-row items-start  ">
+            <div className="text-sm sm:text-lg md:text-xl lg:text-2xl flex items-center mr-5  ">
               <input
-                className="w-6 h-6 mr-2"
+                className="w-6 h-6 mr-1"
                 type="checkbox"
                 id="double"
                 name="double"
@@ -82,7 +85,7 @@ function Product() {
             </div>
             <div className="text-sm sm:text-lg md:text-xl lg:text-2xl flex items-center  ">
               <input
-                className="w-6 h-6 mr-2"
+                className="w-6 h-6 mr-1"
                 type="checkbox"
                 id="cheese"
                 name="cheese"
