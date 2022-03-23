@@ -11,7 +11,7 @@ function Product() {
   };
 
   return (
-    <div className="h-almost flex flex-col md:flex-row items-center justify-center mx-auto py-5 overflow-auto scrollbar-hide ">
+    <div className="h-almost flex flex-col md:flex-row items-center justify-center mx-auto py-5 overflow-auto scrollbar-hide bg-white">
       {/* Left */}
       <div className="flex items-center md:items-start py-0 md:py-16 justify-center h-full md:h-5/6 w-4/6 md:w-4/6 overflow-auto scrollbar-hide">
         {/* <div className="flex items-center justify- h-5/6 w-full relative"> */}
@@ -19,25 +19,26 @@ function Product() {
         {/* </div> */}
       </div>
       {/* Right */}
-      <div className="py-4 h-full w-full pr-20 pl-5 items-center justify-center  overflow-auto scrollbar-hide mx-auto">
-        <div className="flex flex-col py-6 text-center md:text-left">
-          <h1 className=" flex items-center justify-center text-3xl">
+      <div className="py-4 h-full w-full pr-20 pl-5 mx-auto  overflow-auto scrollbar-hide">
+        <div className="flex flex-col py-6 space-y-5 text-center md:text-left">
+          <h1 className=" text-black text-4xl md:text-5xl font-bold">
             {pizza.name}
           </h1>
-          <span className="text-[#d1411e] mx-auto text-xl font-normal border-b-2 w-12 border-[#d1411e]">
+          <span className="text-[#d1411e] text-xl font-bold border-b-2 w-10 border-[#d1411e]">
             {pizza.price[size]}
           </span>
-          <p className="text-lg md:text-xl xl:text-2xl 3xl:text-4xl mx-auto">
-            {" "}
+          <p className="text-lg md:text-xl xl:text-2xl 3xl:text-4xl ">
             {pizza.desc}
           </p>
         </div>
 
         {/* sizes */}
-        <h3 className=" text-2xl pb-4">Choose the size</h3>
-        <div className="flex items-center justify-center w-full space-x-6 pb-20">
+        <h3 className=" text-black text-xl md:text-2xl font-bold xl:text-4xl pb-4">
+          Choose the size
+        </h3>
+        <div className="flex items-center justify-between w-full space-x-4 pb-20">
           <div
-            className="w-[12rem] space-y-4 flex flex-col items-center justify-center"
+            className="w-[12rem] space-y-4 flex flex-col items-center justify-center relative"
             onClick={() => setSize(0)}
           >
             <img src="/img/size.png" alt="" />
