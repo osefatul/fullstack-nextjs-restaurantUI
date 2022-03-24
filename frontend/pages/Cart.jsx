@@ -11,11 +11,19 @@ function Cart() {
               <table className="min-w-full text-center">
                 <thead className="border-b bg-gray-50">
                   <tr className="">
-                    <th className="px-8 py-2 text-sm text-gray-500">Product</th>
-                    <th className="px-8 py-2 text-sm text-gray-500">Name</th>
-                    <th className="px-8 py-2 text-sm text-gray-500">Extras</th>
-                    <th className="px-8 py-2 text-sm text-gray-500">Price</th>
-                    <th className="px-8 py-2 text-sm text-gray-500">
+                    <th scope="col" className="px-8 py-2 text-sm text-gray-500">
+                      Product
+                    </th>
+                    <th scope="col" className="px-8 py-2 text-sm text-gray-500">
+                      Name
+                    </th>
+                    <th scope="col" className="px-8 py-2 text-sm text-gray-500">
+                      Extras
+                    </th>
+                    <th scope="col" className="px-8 py-2 text-sm text-gray-500">
+                      Price
+                    </th>
+                    <th scope="col" className="px-8 py-2 text-sm text-gray-500">
                       Quantity
                     </th>
                     <th className="px-8 py-2 text-sm text-gray-500">Total</th>
