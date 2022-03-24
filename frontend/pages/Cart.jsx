@@ -2,9 +2,9 @@ import React from "react";
 
 function Cart() {
   return (
-    <div className=" h-almost w-screen flex flex-col md:flex-row justify-around p-14">
+    <div className=" h-almost w-screen flex flex-col md:flex-row space-x-10 justify-center p-14 mx-auto">
       {/* LEFT SIDE OF THE PAGE */}
-      <div class="flex flex-col">
+      <div class="flex flex-col px-">
         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
             <div className="overflow-hidden">
@@ -45,36 +45,44 @@ function Cart() {
                     <td className="px-8 py-2 text-sm ">
                       <span>Double Infrediants, Spicy Sauce</span>
                     </td>
+
                     <td className=" whitespace-nowrap px-8 py-2 text-sm ">
                       <span>$20.21</span>
                     </td>
+
                     <td className=" whitespace-nowrap px-8 py-2 text-sm ">
                       <span className="">3</span>
                     </td>
+
                     <td className=" whitespace-nowrap px-8 py-2 text-sm ">
                       <span>60.63</span>
                     </td>
                   </tr>
 
-                  <tr>
-                    <td>
+                  <tr className="bg-white border-b">
+                    <td className=" whitespace-nowrap px-8 py-2 text-sm text-gray-500">
                       <div className="w-[5rem] h-[5rem]">
                         <img className="w-full" src="/img/pizza.png" alt="" />
                       </div>
                     </td>
-                    <td>
-                      <span>Henry</span>
+
+                    <td className=" whitespace-nowrap px-8 py-2 text-sm text-gray-500">
+                      <span>Mike</span>
                     </td>
-                    <td>
+
+                    <td className="px-8 py-2 text-sm ">
                       <span>Double Infrediants, Spicy Sauce</span>
                     </td>
-                    <td>
+
+                    <td className=" whitespace-nowrap px-8 py-2 text-sm ">
                       <span>$20.21</span>
                     </td>
-                    <td>
-                      <span>3</span>
+
+                    <td className=" whitespace-nowrap px-8 py-2 text-sm ">
+                      <span className="">3</span>
                     </td>
-                    <td>
+
+                    <td className=" whitespace-nowrap px-8 py-2 text-sm ">
                       <span>60.63</span>
                     </td>
                   </tr>
