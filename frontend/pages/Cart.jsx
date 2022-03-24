@@ -2,9 +2,9 @@ import React from "react";
 
 function Cart() {
   return (
-    <div className=" h-almost  flex flex-col lg:flex-row space-y-5 md:space-x-12 justify-center py-5 sm:py-0 mb-5 md:p-14 mx-auto  overflow:auto">
+    <div className=" h-almost  flex flex-col lg:flex-row space-y-5 md:space-x-12 justify-center py-5 sm:py-0 mb-5 md:p-14 sm:mx-auto overflow:auto">
       {/* LEFT SIDE OF THE PAGE */}
-      <div class="flex flex-col px-">
+      <div class="flex flex-col ">
         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
             <div className="overflow-hidden">
