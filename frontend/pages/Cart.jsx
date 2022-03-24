@@ -31,7 +31,7 @@ function Cart() {
                 </thead>
 
                 <tbody className="bg-white">
-                  <tr className="whitespace-nowrap">
+                  <tr className="bg-white border-b">
                     <td className="px-8 py-2 text-sm text-gray-500">
                       <div className="w-[5rem] h-[5rem]">
                         <img className="w-full" src="/img/pizza.png" alt="" />
