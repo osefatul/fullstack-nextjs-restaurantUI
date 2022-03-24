@@ -2,10 +2,13 @@ import React from "react";
 
 function id() {
   return (
-    <div className="h-almost flex flex-col md:flex-row pt-10">
+    <div
+      className=" h-almost flex flex-col md:flex-row justify-center
+    space-y-5 md:space-x-12  py-5 sm:py-0  mb-5 md:p-14  sm:mx-auto  overflow:auto "
+    >
       {/* LEFT SIDE */}
-      <div className="flex flex-col basis-2/3">
-        <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div className="flex flex-col">
+        <div className="overflow-x-auto sm:-mx-6 lg:-mx-8 pb-10">
           <div className="py-4 inline-block min-w-full sm:px-3 lg:px-4">
             <div className="overflow-hidden">
               <table className="min-w-full text-center">
@@ -17,9 +20,77 @@ function id() {
                     <th className="px-4  py-2 text-sm text-black">Total</th>
                   </tr>
 
-                  <tr></tr>
+                  <tr>
+                    <td className=" whitespace-nowrap px-4 py-2 text-sm text-black">
+                      <span>129837819237</span>
+                    </td>
+                    <td className="px-4  py-2 text-sm text-black">
+                      <span>John Doe</span>
+                    </td>
+                    <td className="px-4  py-2 text-sm text-black">
+                      <span>Elton st. 212-33 LA</span>
+                    </td>
+                    <td className=" whitespace-nowrap  px-4  py-2 text-sm text-black">
+                      <span>$79.80</span>
+                    </td>
+                  </tr>
                 </thead>
               </table>
+            </div>
+          </div>
+        </div>
+        {/* PAYMENT */}
+        <div className="flex  justify-around ">
+          <div className>
+            <img src="/img/paid.png" width={30} height={30} alt="" />
+            <span>Payment</span>
+            <div className="">
+              <img
+                className=""
+                src="/img/checked.png"
+                width={20}
+                height={20}
+                alt=""
+              />
+            </div>
+          </div>
+          <div className>
+            <img src="/img/bake.png" width={30} height={30} alt="" />
+            <span>Payment</span>
+            <div className="">
+              <img
+                className=""
+                src="/img/checked.png"
+                width={20}
+                height={20}
+                alt=""
+              />
+            </div>
+          </div>
+          <div className>
+            <img src="/img/bike.png" width={30} height={30} alt="" />
+            <span>Payment</span>
+            <div className="">
+              <img
+                className=""
+                src="/img/checked.png"
+                width={20}
+                height={20}
+                alt=""
+              />
+            </div>
+          </div>
+          <div className>
+            <img src="/img/delivered.png" width={30} height={30} alt="" />
+            <span>Payment</span>
+            <div className="">
+              <img
+                className=""
+                src="/img/checked.png"
+                width={20}
+                height={20}
+                alt=""
+              />
             </div>
           </div>
         </div>
