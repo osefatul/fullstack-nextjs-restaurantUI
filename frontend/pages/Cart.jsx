@@ -32,26 +32,26 @@ function Cart() {
 
                 <tbody className="bg-white">
                   <tr className="bg-white border-b">
-                    <td className="px-8 py-2 text-sm text-gray-500">
+                    <td className=" whitespace-nowrap px-8 py-2 text-sm text-gray-500">
                       <div className="w-[5rem] h-[5rem]">
                         <img className="w-full" src="/img/pizza.png" alt="" />
                       </div>
                     </td>
 
-                    <td className="px-8 py-2 text-sm">
+                    <td className=" whitespace-nowrap px-8 py-2 text-sm text-gray-500">
                       <span>Mike</span>
                     </td>
 
-                    <td className="px-10 py-2 text-sm">
+                    <td className="px-8 py-2 text-sm ">
                       <span>Double Infrediants, Spicy Sauce</span>
                     </td>
-                    <td className="px-8 py-2 text-sm">
+                    <td className=" whitespace-nowrap px-8 py-2 text-sm ">
                       <span>$20.21</span>
                     </td>
-                    <td className="px-8 py-2 text-sm justify-items-center ">
+                    <td className=" whitespace-nowrap px-8 py-2 text-sm ">
                       <span className="">3</span>
                     </td>
-                    <td className="px-8 py-2 text-sm">
+                    <td className=" whitespace-nowrap px-8 py-2 text-sm ">
                       <span>60.63</span>
                     </td>
                   </tr>
