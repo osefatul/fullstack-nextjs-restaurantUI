@@ -34,7 +34,7 @@ function Footer() {
 
           <div
             className=" flex flex-col md:flex-row w-full
-          text:sm lg:text-lg space-y-5 md:space-x-10 text-center"
+          text:sm lg:text-lg space-y-5 md:space-x-10 text-center justify-center"
           >
             <p className="mt-4">
               63312 Skaha Road#621.
