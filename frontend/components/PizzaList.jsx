@@ -1,6 +1,6 @@
 import React from "react";
 import PizzaCard from "./PizzaCard";
-function PizzaList() {
+const PizzaList = ({ pizzaList }) => {
   // scollbar-hide is a library plugged into tailwind.config that hide scrollbar.
   return (
     <div className="flex flex-col items-center py-12 px-3 bg-white h-almost ">
@@ -12,18 +12,12 @@ function PizzaList() {
         limited personal interaction.
       </p>
       <div className="w-full flex items-center justify-center flex-wrap overflow-auto scrollbar-hide">
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
+        {pizzaList.map((pizza) => (
+          <PizzaCard key={pizza._id} pizza={pizza} />
+        ))}
       </div>
     </div>
   );
-}
+};
 
 export default PizzaList;
