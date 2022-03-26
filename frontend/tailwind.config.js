@@ -11,6 +11,16 @@ module.exports = {
       maxWidth: {
         "1/2": "50%",
       },
+
+      // keyframes: {
+      //   inProgress: {
+      //     opacity: "0",
+      //     opacity: "1",
+      //   },
+      // },
+      // animation: {
+      //   inProgress: "1s ease infinite alternate",
+      // },
     },
   },
   variants: {},

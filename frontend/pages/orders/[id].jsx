@@ -1,6 +1,15 @@
-import React from "react";
-
+import React, { useState } from "react";
+import styles from "../../styles/Order.module.css";
 function id() {
+  const status = 0;
+
+  // I have used vanila CSS here
+  const statusClass = (index) => {
+    if (index - status < 1) return styles.done;
+    if (index - status === 1) return styles.inProgress;
+    if (index - status > 1) return styles.undone;
+  };
+
   return (
     <div
       className=" h-almost flex flex-col md:flex-row justify-center
@@ -8,16 +17,16 @@ function id() {
     >
       {/* LEFT SIDE */}
       <div className="flex flex-col">
-        <div className="overflow-x-auto sm:-mx-6 lg:-mx-8 mb-10">
-          <div className="py-4 inline-block min-w-full sm:px-3 lg:px-4">
+        <div className="overflow-x-auto sm:-mx-8 lg:-mx-12 mb-10">
+          <div className="py-4 inline-block min-w-full sm:px-4 lg:px-5">
             <div className="overflow-hidden">
               <table className="min-w-full text-center">
                 <thead className="">
                   <tr>
-                    <th className="px-4  py-2 text-sm text-black">Order ID</th>
-                    <th className="px-4  py-2 text-sm text-black">Customer</th>
-                    <th className="px-4  py-2 text-sm text-black">Address</th>
-                    <th className="px-4  py-2 text-sm text-black">Total</th>
+                    <th className="px-6  py-2 text-sm text-black">Order ID</th>
+                    <th className="px-6  py-2 text-sm text-black">Customer</th>
+                    <th className="px-6  py-2 text-sm text-black">Address</th>
+                    <th className="px-6  py-2 text-sm text-black">Total</th>
                   </tr>
 
                   <tr>
@@ -42,12 +51,12 @@ function id() {
 
         {/* PAYMENT */}
         <div className="flex  justify-around ">
-          <div className>
+          <div className={statusClass(0)}>
             <img src="/img/paid.png" width={30} height={30} alt="" />
             <span>Payment</span>
             <div className="">
               <img
-                className=""
+                className={styles.checkedIcon}
                 src="/img/checked.png"
                 width={20}
                 height={20}
@@ -55,12 +64,12 @@ function id() {
               />
             </div>
           </div>
-          <div className>
+          <div className={statusClass(1)}>
             <img src="/img/bake.png" width={30} height={30} alt="" />
             <span>Payment</span>
             <div className="">
               <img
-                className=""
+                className={styles.checkedIcon}
                 src="/img/checked.png"
                 width={20}
                 height={20}
@@ -68,12 +77,12 @@ function id() {
               />
             </div>
           </div>
-          <div className>
+          <div className={statusClass(2)}>
             <img src="/img/bike.png" width={30} height={30} alt="" />
             <span>Payment</span>
             <div className="">
               <img
-                className=""
+                className={styles.checkedIcon}
                 src="/img/checked.png"
                 width={20}
                 height={20}
@@ -81,12 +90,12 @@ function id() {
               />
             </div>
           </div>
-          <div className>
+          <div className={statusClass(3)}>
             <img src="/img/delivered.png" width={30} height={30} alt="" />
             <span>Payment</span>
             <div className="">
               <img
-                className=""
+                className={styles.checkedIcon}
                 src="/img/checked.png"
                 width={20}
                 height={20}
