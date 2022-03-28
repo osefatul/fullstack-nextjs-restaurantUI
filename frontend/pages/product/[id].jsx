@@ -4,11 +4,27 @@ import axios from "axios";
 function Product({ pizza }) {
   console.log(pizza);
   const [size, setSize] = useState(0);
+  const [price, setPrice] = useState(pizza.prices[0]);
+  const [extras, setExtras] = useState([]);
+
+  const changePrice = (number) => {
+    setPrice(price + number);
+  };
+
+  const handleSize = (sizeIndex) => {
+    const difference = pizza.prices[sizeIndex] - pizza.prices[size];
+    setSize(sizeIndex);
+    changePrice(difference);
+  };
 
   const handleChange = (e, option) => {
     const checked = e.target.checked;
-
     if (checked) {
+      changePrice(option.price);
+      setExtras((prev) => [...prev, option]);
+    } else {
+      changePrice(-option.price);
+      setExtras(extras.filter((extra) => extra._id !== option._id));
     }
   };
 
@@ -27,7 +43,7 @@ function Product({ pizza }) {
             {pizza.title}
           </h1>
           <span className="text-[#d1411e] text-lg md:text-2xl border-b-2 w-14 border-[#d1411e]  place-self-center md:place-self-start">
-            {`$${pizza.prices[size]}`}
+            {`$${price}`}
           </span>
           <p className="text-sm md:text-lg lg:text-xl xl:text-2xl 3xl:text-4xl ">
             {pizza.desc}
@@ -42,7 +58,7 @@ function Product({ pizza }) {
         <div className="flex flex-col md:flex-row items-center justify-center ">
           <div
             className=" w-3/6 space-y-4 flex flex-col items-center justify-center relative mb-5 md:mb-0  sm:mr-5"
-            onClick={() => setSize(0)}
+            onClick={() => handleSize(0)}
           >
             <img className="w-[10rem]" src="/img/size.png" alt="" />
             {/* <span className="absolute top-[-20px] right-[-23px] w-[4rem] text-xs sm:text-sm lg:text-lg text-white bg-[teal] flex items-center justify-center rounded-full">
@@ -51,7 +67,7 @@ function Product({ pizza }) {
           </div>
           <div
             className=" w-4/6 space-y-4 flex flex-col items-center justify-center relative mb-5 md:mb-0  sm:mr-5"
-            onClick={() => setSize(1)}
+            onClick={() => handleSize(1)}
           >
             <img
               className=" w-[12rem] justify-self-center"
@@ -64,7 +80,7 @@ function Product({ pizza }) {
           </div>
           <div
             className=" w-5/6 space-y-4 flex flex-col items-center justify-center relative mb-5 sm:mb-0 sm:mr-5 "
-            onClick={() => setSize(2)}
+            onClick={() => handleSize(2)}
           >
             <img className="w-[14rem] " src="/img/size.png" alt="" />
             {/* <span className="absolute top-[-18px] right-[-6px] w-[4rem] h-8 text-xs sm:text-sm lg:text-lg text-white bg-[teal] flex items-center justify-center rounded-full">
