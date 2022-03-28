@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-
-function Product() {
+import axios from "axios";
+// Define the props from SSR
+function Product({ pizza }) {
   const [size, setSize] = useState(0);
-  const pizza = {
-    id: 1,
-    img: "/img/pizza.png",
-    name: "CAMPAGNOLA",
-    price: [19.9, 23.9, 27.9],
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis arcu purus, rhoncus fringilla vestibulum vel, dignissim vel ante. Nulla facilisi. Nullam a urna sit amet tellus pellentesque egestas in in ante.",
-  };
+  // const pizza = {
+  //   id: 1,
+  //   img: "/img/pizza.png",
+  //   name: "CAMPAGNOLA",
+  //   price: [19.9, 23.9, 27.9],
+  //   desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis arcu purus, rhoncus fringilla vestibulum vel, dignissim vel ante. Nulla facilisi. Nullam a urna sit amet tellus pellentesque egestas in in ante.",
+  // };
 
   return (
     <div className="h-almost flex flex-col md:flex-row items-center justify-center mx-auto py-5 overflow-auto scrollbar-hide">
@@ -22,10 +23,10 @@ function Product() {
       <div className=" text-black py-4 h-full  px-16 sm:pr-24 sm:pl-10 md:w-[70rem] space-y-4 overflow-auto scrollbar-hide">
         <div className="flex flex-col  py-6 space-y-5 md:text-left">
           <h1 className=" text-xl sm:text-2xl md:text-5xl font-bold text-center md:text-left">
-            {pizza.name}
+            {pizza.title}
           </h1>
           <span className="text-[#d1411e] text-lg md:text-2xl border-b-2 w-14 border-[#d1411e]  place-self-center md:place-self-start">
-            {`$${pizza.price[size]}`}
+            {`$${pizza.prices[size]}`}
           </span>
           <p className="text-sm md:text-lg lg:text-xl xl:text-2xl 3xl:text-4xl ">
             {pizza.desc}
@@ -103,7 +104,7 @@ function Product() {
                 id="spicy"
                 name="spicy"
               />
-              <label htmlFor="spicy">Spizy Sauce</label>
+              <label htmlFor="spicy">Spicy Sauce</label>
             </div>
             <div className="flex items-center mb-1 mr-5 ">
               <input
@@ -133,3 +134,16 @@ function Product() {
 }
 
 export default Product;
+
+//SSR for single product: wea re using and ID for that product.
+
+export const getServerSideProps = async ({ params }) => {
+  const res = await axios.get(
+    `http://localhost:3000/api/products/${params.id}`
+  );
+  return {
+    props: {
+      pizza: res.data,
+    },
+  };
+};
