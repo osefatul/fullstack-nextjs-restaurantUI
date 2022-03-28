@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 // Define the props from SSR
 function Product({ pizza }) {
+  console.log(pizza);
   const [size, setSize] = useState(0);
   // const pizza = {
   //   id: 1,
@@ -78,44 +79,28 @@ function Product({ pizza }) {
 
         {/* Ingredients */}
         <div className="text-xs md:text-sm lg:text-lg xl:text-2xl font-normal ">
-          <div className="flex flex-col sm:flex-row items-start  ">
-            <div className=" flex items-center mb-1 sm:mr-5">
-              <input
-                className="w-6 h-6 mr-2"
-                type="checkbox"
-                id="double"
-                name="double"
-              />
-              <label htmlFor="double">Double Ingredients</label>
-            </div>
-            <div className="flex items-center mb-1 mr-5  ">
-              <input
-                className="w-6 h-6 mr-2"
-                type="checkbox"
-                id="cheese"
-                name="cheese"
-              />
-              <label htmlFor="cheese">Extra Cheese</label>
-            </div>
-            <div className=" flex items-center mb-1 mr-5 ">
-              <input
-                className="w-6 h-6 mr-2"
-                type="checkbox"
-                id="spicy"
-                name="spicy"
-              />
-              <label htmlFor="spicy">Spicy Sauce</label>
-            </div>
-            <div className="flex items-center mb-1 mr-5 ">
-              <input
-                className="w-6 h-6 mr-2"
-                type="checkbox"
-                id="garlic"
-                name="garlic"
-              />
-              <label htmlFor="garlic">Garlic Sauce</label>
-            </div>
-          </div>
+          {pizza.extraOptions.map((option) => {
+            return (
+              <div
+                className="flex flex-col sm:flex-row items-start"
+                key={option._id + option.text}
+              >
+                <div
+                  className=" flex items-center mb-1 sm:mr-5"
+                  key={option._id}
+                >
+                  {console.log(option)}
+                  <input
+                    className="w-6 h-6 mr-2"
+                    type="checkbox"
+                    id={option.text}
+                    name={option.text}
+                  />
+                  <label htmlFor="double">{option.text}</label>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         <div className=" space-x-1">
