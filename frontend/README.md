@@ -10,4 +10,6 @@ Once we have defined our props and returned it into serverside function, we then
 
 Here we discuss how we worked on changin prices when we change the size of pizza or add additional ingredients.
 
-1- Lets create a function in order: - handleChange: This will handle the change of pizza price if the input it associated with is checked.
+Lets create below functions in order:
+
+    1- handleChange: This will handle the change of pizza price if the input it associated with is checked.
