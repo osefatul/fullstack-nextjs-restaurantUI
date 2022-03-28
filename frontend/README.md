@@ -12,5 +12,6 @@ Here we discuss how we worked on changin prices when we change the size of pizza
 
 Lets create below functions in order:
 
-    1- handleChange: This will handle the change of pizza price if the input it associated with is checked.
-    2- handleSize: This will calculate the prize action of the different sizes of the pizza. It will calculate the difference in price between the previous and current selected pizza.
+    1-ChangePrice: a function where it will add up additional price on top of base price. This addition price could extra ingredients or changing the size of pizza.
+    2-handleChange: This will handle the change of pizza price if the input it associated with is checked. pass the new price to changePrice funtion.
+    2- handleSize: This will calculate the prize action of the different sizes of the pizza. It will calculate the difference in price between the previous and current selected pizza. and send the difference as additional price to changePrice function.
