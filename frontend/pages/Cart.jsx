@@ -1,6 +1,84 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectProducts, selectTotal } from "../redux/cartSlice";
+import {
+  PayPalScriptProvider,
+  PayPalButtons,
+  usePayPalScriptReducer,
+} from "@paypal/react-paypal-js";
+import axios from "axios";
+import { useRouter } from "next/router";
 
 function Cart() {
+  const dispatch = useDispatch();
+  const products = useSelector(selectProducts);
+  const total = useSelector(selectTotal);
+
+  const [open, setOpen] = useState(false);
+  const [cash, setCash] = useState(false);
+
+  const amount = "2";
+  const currency = "USD";
+  const style = { layout: "vertical" };
+  const router = useRouter();
+
+  // Custom component to wrap the PayPalButtons and handle currency changes
+  const ButtonWrapper = ({ currency, showSpinner }) => {
+    // usePayPalScriptReducer can be use only inside children of PayPalScriptProviders
+    // This is the main reason to wrap the PayPalButtons in a new component
+    const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
+
+    useEffect(() => {
+      dispatch({
+        type: "resetOptions",
+        value: {
+          ...options,
+          currency: currency,
+        },
+      });
+    }, [currency, showSpinner]);
+
+    return (
+      <>
+        {showSpinner && isPending && <div className="spinner" />}
+        <PayPalButtons
+          style={style}
+          disabled={false}
+          forceReRender={[amount, currency, style]}
+          fundingSource={undefined}
+          createOrder={(data, actions) => {
+            return actions.order
+              .create({
+                purchase_units: [
+                  {
+                    amount: {
+                      currency_code: currency,
+                      value: amount,
+                    },
+                  },
+                ],
+              })
+              .then((orderId) => {
+                // Your code here after create the order
+                return orderId;
+              });
+          }}
+          onApprove={function (data, actions) {
+            return actions.order.capture().then(function (details) {
+              const shipping = details.purchase_units[0].shipping;
+              createOrder({
+                customer: shipping.name.full_name,
+                address: shipping.address.address_line_1,
+                total: cart.total,
+                method: 1,
+              });
+            });
+          }}
+        />
+      </>
+    );
+  };
+
   return (
     <div className=" h-almost  flex flex-col lg:flex-row space-y-5 md:space-x-12 justify-center py-5 sm:py-0 mb-5 md:p-14 sm:mx-auto overflow:auto">
       {/* LEFT SIDE OF THE PAGE */}
@@ -31,61 +109,39 @@ function Cart() {
                 </thead>
 
                 <tbody className="bg-white">
-                  <tr className="bg-white border-b">
-                    <td className=" whitespace-nowrap px-8 py-2 text-sm text-gray-500">
-                      <div className="w-[7rem] h-[7rem]">
-                        <img className="w-full" src="/img/pizza.png" alt="" />
-                      </div>
-                    </td>
+                  {products.map((product) => {
+                    return (
+                      <tr key={product._id} className="bg-white border-b">
+                        <td className=" whitespace-nowrap px-8 py-2 text-sm text-gray-500">
+                          <div className="w-[7rem] h-[7rem]">
+                            <img className="w-full" src={product.img} alt="" />
+                          </div>
+                        </td>
 
-                    <td className=" whitespace-nowrap px-8 py-2 text-sm text-gray-500">
-                      <span>Mike</span>
-                    </td>
+                        <td className=" whitespace-nowrap px-8 py-2 text-sm text-gray-500">
+                          <span>{product.title}</span>
+                        </td>
 
-                    <td className="px-8 py-2 text-sm ">
-                      <span>Double Infrediants, Spicy Sauce</span>
-                    </td>
+                        <td className="px-8 py-2 text-sm ">
+                          {product.extras.map((extra) => {
+                            return <span key={extra._id}>{extra.text}</span>;
+                          })}
+                        </td>
 
-                    <td className=" whitespace-nowrap px-8 py-2 text-sm ">
-                      <span>$20.21</span>
-                    </td>
+                        <td className=" whitespace-nowrap px-8 py-2 text-sm ">
+                          <span>${product.price}</span>
+                        </td>
 
-                    <td className=" whitespace-nowrap px-8 py-2 text-sm ">
-                      <span className="">3</span>
-                    </td>
+                        <td className=" whitespace-nowrap px-8 py-2 text-sm ">
+                          <span className="">{product.quantity}</span>
+                        </td>
 
-                    <td className=" whitespace-nowrap px-8 py-2 text-sm font-bold ">
-                      <span>60.63</span>
-                    </td>
-                  </tr>
-
-                  <tr className="bg-white border-b">
-                    <td className=" whitespace-nowrap px-8 py-2 text-sm text-gray-500">
-                      <div className="w-[7rem] h-[7rem]">
-                        <img className="w-full" src="/img/pizza.png" alt="" />
-                      </div>
-                    </td>
-
-                    <td className=" whitespace-nowrap px-8 py-2 text-sm text-gray-500">
-                      <span>Mike</span>
-                    </td>
-
-                    <td className="px-8 py-2 text-sm ">
-                      <span>Double Infrediants, Spicy Sauce</span>
-                    </td>
-
-                    <td className=" whitespace-nowrap px-8 py-2 text-sm ">
-                      <span>$20.21</span>
-                    </td>
-
-                    <td className=" whitespace-nowrap px-8 py-2 text-sm ">
-                      <span className="">3</span>
-                    </td>
-
-                    <td className=" whitespace-nowrap px-8 py-2 text-sm font-bold ">
-                      <span>$60.63</span>
-                    </td>
-                  </tr>
+                        <td className=" whitespace-nowrap px-8 py-2 text-sm font-bold ">
+                          <span>${product.price * product.quantity}</span>
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
@@ -113,6 +169,16 @@ function Cart() {
           <button className="bg-white text-red-700 font-bold w-[12rem] h-[1.5rem] rounded mt-3 overflow-auto">
             CHECKOUT NOW!
           </button>
+
+          <PayPalScriptProvider
+            options={{
+              "client-id": "test",
+              components: "buttons",
+              currency: "USD",
+            }}
+          >
+            <ButtonWrapper currency={currency} showSpinner={false} />
+          </PayPalScriptProvider>
         </div>
       </div>
     </div>
