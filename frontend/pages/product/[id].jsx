@@ -4,13 +4,13 @@ import axios from "axios";
 function Product({ pizza }) {
   console.log(pizza);
   const [size, setSize] = useState(0);
-  // const pizza = {
-  //   id: 1,
-  //   img: "/img/pizza.png",
-  //   name: "CAMPAGNOLA",
-  //   price: [19.9, 23.9, 27.9],
-  //   desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis arcu purus, rhoncus fringilla vestibulum vel, dignissim vel ante. Nulla facilisi. Nullam a urna sit amet tellus pellentesque egestas in in ante.",
-  // };
+
+  const handleChange = (e, option) => {
+    const checked = e.target.checked;
+
+    if (checked) {
+    }
+  };
 
   return (
     <div className="h-almost flex flex-col md:flex-row items-center justify-center mx-auto py-5 overflow-auto scrollbar-hide">
@@ -95,6 +95,7 @@ function Product({ pizza }) {
                     type="checkbox"
                     id={option.text}
                     name={option.text}
+                    onChange={(e) => handleChange(e, option)}
                   />
                   <label htmlFor="double">{option.text}</label>
                 </div>
