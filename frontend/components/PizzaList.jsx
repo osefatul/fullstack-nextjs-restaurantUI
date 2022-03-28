@@ -11,7 +11,7 @@ const PizzaList = ({ pizzaList }) => {
         is a request you can make that allows you to complete your order with
         limited personal interaction.
       </p>
-      <div className="w-full flex items-center justify-center flex-wrap overflow-auto scrollbar-hide">
+      <div className="w-full flex items-center justify-center flex-wrap overflow-auto scrollbar-hide cursor-pointer">
         {pizzaList.map((pizza) => (
           <PizzaCard key={pizza._id} pizza={pizza} />
         ))}

@@ -1,9 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
+import { useSelector } from "react-redux";
+import { selectQuantity } from "../redux/cartSlice";
 
 function Navbar() {
   const [toggle, setToggle] = useState(false);
+
+  const quantity = useSelector(selectQuantity);
 
   return (
     <div
@@ -92,24 +97,27 @@ function Navbar() {
       </div>
 
       {/* Cart smaller and bigger screen  */}
-      <div className="justify-end">
-        <div className="relative">
-          <img
-            className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 "
-            src="/img/cart.png"
-            alt=""
-          />
-          <div
-            className="absolute top-[-10px] right-[-10px]
+
+      <Link href="/cart">
+        <div className="justify-end cursor-pointer">
+          <div className="relative">
+            <img
+              className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 "
+              src="/img/cart.png"
+              alt=""
+            />
+            <div
+              className="absolute top-[-10px] right-[-10px]
             w-3 h-3 sm:w-5 sm:h-5 bg-white rounded-full
-            flex items-center justify-center
+            flex items-center justify-center 
             text-xs sm:text-sm md:text-base font-bold text-red-800
-          "
-          >
-            2
+            "
+            >
+              {quantity}
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 }

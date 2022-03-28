@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../redux/cartSlice";
 // Define the props from SSR
 function Product({ pizza }) {
   console.log(pizza);
   const [size, setSize] = useState(0);
   const [price, setPrice] = useState(pizza.prices[0]);
   const [extras, setExtras] = useState([]);
+  const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
 
   const changePrice = (number) => {
     setPrice(price + number);
@@ -26,6 +30,10 @@ function Product({ pizza }) {
       changePrice(-option.price);
       setExtras(extras.filter((extra) => extra._id !== option._id));
     }
+  };
+
+  const handleClick = () => {
+    dispatch(addProduct({ ...pizza, extras, price, quantity }));
   };
 
   return (
@@ -60,7 +68,11 @@ function Product({ pizza }) {
             className=" w-3/6 space-y-4 flex flex-col items-center justify-center relative mb-5 md:mb-0  sm:mr-5"
             onClick={() => handleSize(0)}
           >
-            <img className="w-[10rem]" src="/img/size.png" alt="" />
+            <img
+              className="w-[10rem] cursor-pointer"
+              src="/img/size.png"
+              alt=""
+            />
             {/* <span className="absolute top-[-20px] right-[-23px] w-[4rem] text-xs sm:text-sm lg:text-lg text-white bg-[teal] flex items-center justify-center rounded-full">
               Small
             </span> */}
@@ -70,7 +82,7 @@ function Product({ pizza }) {
             onClick={() => handleSize(1)}
           >
             <img
-              className=" w-[12rem] justify-self-center"
+              className=" w-[12rem] justify-self-center cursor-pointer"
               src="/img/size.png"
               alt=""
             />
@@ -82,7 +94,11 @@ function Product({ pizza }) {
             className=" w-5/6 space-y-4 flex flex-col items-center justify-center relative mb-5 sm:mb-0 sm:mr-5 "
             onClick={() => handleSize(2)}
           >
-            <img className="w-[14rem] " src="/img/size.png" alt="" />
+            <img
+              className="w-[14rem] cursor-pointer "
+              src="/img/size.png"
+              alt=""
+            />
             {/* <span className="absolute top-[-18px] right-[-6px] w-[4rem] h-8 text-xs sm:text-sm lg:text-lg text-white bg-[teal] flex items-center justify-center rounded-full">
               Large
             </span> */}
@@ -125,8 +141,12 @@ function Product({ pizza }) {
             className="w-8 h-8 border-black border rounded "
             type="number"
             defaultValue={1}
+            onChange={(e) => setQuantity(e.target.value)}
           />
-          <button className=" h-8 w-28 rounded bg-[teal] cursor-pointer">
+          <button
+            className=" h-8 w-28 rounded bg-[teal] cursor-pointer"
+            onClick={handleClick}
+          >
             Add to Cart
           </button>
         </div>
