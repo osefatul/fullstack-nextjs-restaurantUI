@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector, reset } from "react-redux";
-import { selectProducts, selectTotal } from "../redux/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { selectProducts, selectTotal, reset } from "../redux/cartSlice";
 import {
   PayPalScriptProvider,
   PayPalButtons,
