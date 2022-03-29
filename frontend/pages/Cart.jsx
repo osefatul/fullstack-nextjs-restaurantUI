@@ -17,7 +17,7 @@ function Cart() {
   const [open, setOpen] = useState(false);
   const [cash, setCash] = useState(false);
 
-  const amount = "2";
+  const amount = total;
   const currency = "USD";
   const style = { layout: "vertical" };
   const router = useRouter();
@@ -82,7 +82,7 @@ function Cart() {
               createOrder({
                 customer: shipping.name.full_name,
                 address: shipping.address.address_line_1,
-                total: cart.total,
+                total: total,
                 method: 1,
               });
             });
@@ -166,13 +166,13 @@ function Cart() {
       <div className="">
         <div
           className={`pt-10 flex flex-col items-center 
-          w-[20rem] ${open ? "h-[20rem]" : "h-[14rem]"}
+          w-[20rem] h-[14rem] ${open ? "pb-[14rem]" : " "}
           bg-zinc-700 text-white mx-auto rounded`}
         >
           <h2 className="text-lg md:text-xl font-bold mb-5">CART TOTAL</h2>
 
           <div className="">
-            <b className="pr-2"> Subtotal:</b>$79..8
+            <b className="pr-2"> Subtotal:</b>${total}
           </div>
 
           <div>
@@ -180,11 +180,11 @@ function Cart() {
           </div>
 
           <div>
-            <b className="pr-2">Total:</b>$81.4
+            <b className="pr-2">Total:</b>${total}
           </div>
 
           {open ? (
-            <div className="flex flex-col z-0">
+            <div className="flex flex-col ">
               <button
                 className="cursor-pointer m-2 rounded bg-white text-[teal] font-bold"
                 onClick={() => setCash(true)}
