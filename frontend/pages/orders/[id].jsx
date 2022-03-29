@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import styles from "../../styles/Order.module.css";
-function id() {
-  const status = 0;
+import axios from "axios";
+
+function id({ order }) {
+  const status = order.status;
 
   // I have used vanila CSS here
   const statusClass = (index) => {
@@ -31,16 +33,16 @@ function id() {
 
                   <tr>
                     <td className=" whitespace-nowrap px-4 py-2 text-sm text-black">
-                      <span>129837819237</span>
+                      <span>{order._id}</span>
                     </td>
                     <td className="px-4  py-2 text-sm text-black">
-                      <span>John Doe</span>
+                      <span>{order.customer}</span>
                     </td>
                     <td className="px-4  py-2 text-sm text-black">
-                      <span>Elton st. 212-33 LA</span>
+                      <span>{order.address}</span>
                     </td>
                     <td className=" whitespace-nowrap  px-4  py-2 text-sm text-black">
-                      <span>$79.80</span>
+                      <span>${order.total}</span>
                     </td>
                   </tr>
                 </thead>
@@ -112,7 +114,7 @@ function id() {
           <div className=" flex flex-col justify-center text-left">
             <h2 className="text-lg md:text-xl font-bold mb-5">CART TOTAL</h2>
             <div className="">
-              <b className="pr-2"> Subtotal:</b>$79..8
+              <b className="pr-2"> Subtotal:</b>${order.total}
             </div>
 
             <div>
@@ -120,7 +122,7 @@ function id() {
             </div>
 
             <div>
-              <b className="pr-2">Total:</b>$81.4
+              <b className="pr-2">Total:</b>${order.total}
             </div>
           </div>
 
@@ -132,5 +134,14 @@ function id() {
     </div>
   );
 }
+
+//SSR for single product: wea re using and ID for that product.
+
+export const getServerSideProps = async ({ params }) => {
+  const res = await axios.get(`http://localhost:3000/api/orders/${params.id}`);
+  return {
+    props: { order: res.data },
+  };
+};
 
 export default id;

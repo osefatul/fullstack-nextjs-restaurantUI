@@ -8,6 +8,7 @@ import {
 } from "@paypal/react-paypal-js";
 import axios from "axios";
 import { useRouter } from "next/router";
+import OrderDetail from "../components/OrderDetail";
 
 function Cart() {
   const dispatch = useDispatch();
@@ -93,9 +94,9 @@ function Cart() {
   };
 
   return (
-    <div className=" h-almost  flex flex-col lg:flex-row space-y-5 md:space-x-12 justify-center py-5 sm:py-0 mb-5 md:p-14 sm:mx-auto overflow:auto">
+    <div className=" h-almost flex flex-col lg:flex-row justify-center py-5 sm:py-0 mb-5 md:p-14 sm:mx-auto overflow:auto relative">
       {/* LEFT SIDE OF THE PAGE */}
-      <div class="flex flex-col ">
+      <div class="flex flex-col pr-20 md:pb-10 ">
         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
             <div className="overflow-hidden">
@@ -163,7 +164,7 @@ function Cart() {
       </div>
 
       {/* RIGHT SIDE OF THE PAGE */}
-      <div className="">
+      <div className="z-40">
         <div
           className={`pt-10 flex flex-col items-center 
           w-[20rem] h-[14rem] ${open ? "pb-[14rem]" : " "}
@@ -192,6 +193,7 @@ function Cart() {
                 CASH ON DELIVERY
               </button>
               <PayPalScriptProvider
+                className=""
                 options={{
                   "client-id":
                     "ASgikdrX5s_FaV07zKfX7mk9DPLLWeqscT2nHdZnNv7ZM9ZBWOUItM5wuBpIQL8HAUzy3G5iT49QZTAD",
@@ -214,7 +216,7 @@ function Cart() {
         </div>
       </div>
 
-      {cash && <OrderDetail total={cart.total} createOrder={createOrder} />}
+      {cash && <OrderDetail total={total} createOrder={createOrder} />}
     </div>
   );
 }
