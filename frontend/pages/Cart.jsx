@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, reset } from "react-redux";
 import { selectProducts, selectTotal } from "../redux/cartSlice";
 import {
   PayPalScriptProvider,
@@ -21,6 +21,19 @@ function Cart() {
   const currency = "USD";
   const style = { layout: "vertical" };
   const router = useRouter();
+
+  const createOrder = async (data) => {
+    try {
+      const res = await axios.post("http://localhost:3000/api/orders", data);
+
+      if (res.status === 201) {
+        dispatch(reset());
+        router.push(`/orders/${res.data._id}`);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   // Custom component to wrap the PayPalButtons and handle currency changes
   const ButtonWrapper = ({ currency, showSpinner }) => {
