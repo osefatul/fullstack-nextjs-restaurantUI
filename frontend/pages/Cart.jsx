@@ -14,7 +14,7 @@ function Cart() {
   const products = useSelector(selectProducts);
   const total = useSelector(selectTotal);
 
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [cash, setCash] = useState(false);
 
   const amount = "2";
@@ -150,8 +150,12 @@ function Cart() {
       </div>
 
       {/* RIGHT SIDE OF THE PAGE */}
-      <div className="overflow-y">
-        <div className="pt-10 flex flex-col items-center w-[20rem] h-[16rem] bg-zinc-700 text-white mx-auto rounded ">
+      <div className="">
+        <div
+          className={`pt-10 flex flex-col items-center 
+          w-[20rem] ${open ? "h-[20rem]" : "h-[14rem]"}
+          bg-zinc-700 text-white mx-auto rounded`}
+        >
           <h2 className="text-lg md:text-xl font-bold mb-5">CART TOTAL</h2>
 
           <div className="">
@@ -169,7 +173,7 @@ function Cart() {
           {open ? (
             <div className="flex flex-col z-0">
               <button
-                className="cursor-pointer m-2 rounded bg-white text-black font-bold"
+                className="cursor-pointer m-2 rounded bg-white text-[teal] font-bold"
                 onClick={() => setCash(true)}
               >
                 CASH ON DELIVERY
@@ -177,17 +181,21 @@ function Cart() {
               <PayPalScriptProvider
                 className="overflow-auto"
                 options={{
-                  "client-id": "test",
+                  "client-id":
+                    "ASgikdrX5s_FaV07zKfX7mk9DPLLWeqscT2nHdZnNv7ZM9ZBWOUItM5wuBpIQL8HAUzy3G5iT49QZTAD",
                   components: "buttons",
                   currency: "USD",
-                  "disable-funding": "credit",
+                  "disable-funding": "credit,card,p24,venmo",
                 }}
               >
                 <ButtonWrapper currency={currency} showSpinner={false} />
               </PayPalScriptProvider>
             </div>
           ) : (
-            <button className="bg-white text-red-700 font-bold w-[12rem] h-[1.5rem] rounded mt-3 overflow-auto">
+            <button
+              className="bg-white text-red-700 font-bold w-[12rem] h-[1.5rem] rounded mt-3 overflow-auto"
+              onClick={() => setOpen(true)}
+            >
               CHECKOUT NOW!
             </button>
           )}

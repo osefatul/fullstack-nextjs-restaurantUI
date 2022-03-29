@@ -16,3 +16,10 @@ Lets create below functions in order:
     2- handleChange: This will handle the change of pizza price if the input it associated with is checked. pass the new price to changePrice funtion.
     3- handleSize: This will calculate the prize action of the different sizes of the pizza. It will calculate the difference in price between the previous and current selected pizza. and send the difference as additional price to changePrice function.
     4- extras useState hook: This is not a function but a hook. We are using this in order to collect all the selected extra ingredients when we add them to carts.
+
+For the Paypal account;
+1- Go to [paypal developer](https://developer.paypal.com/developer/accounts) and login.
+2- Go to Sandbox -> Accounts -> Create account
+3- Create two accounts - a:personal and b:business
+4- Go to My Apps & Credentials -> create an app. choose seller account.
+5- You will get a client ID. Copy that and paste in the Paypal component client-id.
