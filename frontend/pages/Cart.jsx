@@ -14,7 +14,7 @@ function Cart() {
   const products = useSelector(selectProducts);
   const total = useSelector(selectTotal);
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [cash, setCash] = useState(false);
 
   const amount = "2";
@@ -151,7 +151,7 @@ function Cart() {
 
       {/* RIGHT SIDE OF THE PAGE */}
       <div className="">
-        <div className="pt-10 flex flex-col items-center w-[20rem] h-[14rem] bg-zinc-700 text-white mx-auto rounded ">
+        <div className="pt-10 flex flex-col items-center w-[20rem] h-[26rem] bg-zinc-700 text-white mx-auto rounded ">
           <h2 className="text-lg md:text-xl font-bold mb-5">CART TOTAL</h2>
 
           <div className="">
@@ -166,21 +166,33 @@ function Cart() {
             <b className="pr-2">Total:</b>$81.4
           </div>
 
-          <button className="bg-white text-red-700 font-bold w-[12rem] h-[1.5rem] rounded mt-3 overflow-auto">
-            CHECKOUT NOW!
-          </button>
-
-          <PayPalScriptProvider
-            options={{
-              "client-id": "test",
-              components: "buttons",
-              currency: "USD",
-            }}
-          >
-            <ButtonWrapper currency={currency} showSpinner={false} />
-          </PayPalScriptProvider>
+          {open ? (
+            <div className="flex flex-col z-0">
+              <button
+                className="cursor-pointer m-2 rounded bg-white text-black font-bold"
+                onClick={() => setCash(true)}
+              >
+                CASH ON DELIVERY
+              </button>
+              <PayPalScriptProvider
+                options={{
+                  "client-id": "test",
+                  components: "buttons",
+                  currency: "USD",
+                }}
+              >
+                <ButtonWrapper currency={currency} showSpinner={false} />
+              </PayPalScriptProvider>
+            </div>
+          ) : (
+            <button className="bg-white text-red-700 font-bold w-[12rem] h-[1.5rem] rounded mt-3 overflow-auto">
+              CHECKOUT NOW!
+            </button>
+          )}
         </div>
       </div>
+
+      {cash && <OrderDetail total={cart.total} createOrder={createOrder} />}
     </div>
   );
 }
