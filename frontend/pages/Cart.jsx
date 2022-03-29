@@ -150,8 +150,8 @@ function Cart() {
       </div>
 
       {/* RIGHT SIDE OF THE PAGE */}
-      <div className="">
-        <div className="pt-10 flex flex-col items-center w-[20rem] h-[26rem] bg-zinc-700 text-white mx-auto rounded ">
+      <div className="overflow-y">
+        <div className="pt-10 flex flex-col items-center w-[20rem] h-[16rem] bg-zinc-700 text-white mx-auto rounded ">
           <h2 className="text-lg md:text-xl font-bold mb-5">CART TOTAL</h2>
 
           <div className="">
@@ -175,10 +175,12 @@ function Cart() {
                 CASH ON DELIVERY
               </button>
               <PayPalScriptProvider
+                className="overflow-auto"
                 options={{
                   "client-id": "test",
                   components: "buttons",
                   currency: "USD",
+                  "disable-funding": "credit",
                 }}
               >
                 <ButtonWrapper currency={currency} showSpinner={false} />
