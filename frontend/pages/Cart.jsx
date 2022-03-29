@@ -179,7 +179,6 @@ function Cart() {
                 CASH ON DELIVERY
               </button>
               <PayPalScriptProvider
-                className="overflow-auto"
                 options={{
                   "client-id":
                     "ASgikdrX5s_FaV07zKfX7mk9DPLLWeqscT2nHdZnNv7ZM9ZBWOUItM5wuBpIQL8HAUzy3G5iT49QZTAD",
