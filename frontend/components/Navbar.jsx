@@ -42,12 +42,14 @@ function Navbar() {
         >
           {["Homepage", "Products", "Menu", "Events", "Blogs", "Contact"].map(
             (item, i) => (
-              <li
-                className="text-white text-xs sm:text-sm  lg:text-2xl cursor-pointer hover:text-stone-400"
-                key={i}
-              >
-                {item}
-              </li>
+              <Link href={`${item === "Homepage" ? "/" : ""}`}>
+                <li
+                  className="text-white text-xs sm:text-sm  lg:text-xl cursor-pointer hover:text-stone-400"
+                  key={i}
+                >
+                  {item}
+                </li>
+              </Link>
             )
           )}
         </ul>
@@ -78,13 +80,15 @@ function Navbar() {
                 "Blogs",
                 "Contact",
               ].map((item, i) => (
-                <li
-                  className=" text-black text-2xl cursor-pointer hover:bg-red-800 w-screen flex items-center justify-center"
-                  key={i}
-                  onClick={() => setToggle(false)}
-                >
-                  {item}
-                </li>
+                <Link href={`${item === "Homepage" ? "/" : ""}`}>
+                  <li
+                    className=" text-black text-xl cursor-pointer hover:bg-red-800 w-screen flex items-center justify-center"
+                    key={i}
+                    onClick={() => setToggle(false)}
+                  >
+                    {item}
+                  </li>
+                </Link>
               ))}
             </ul>
           </div>

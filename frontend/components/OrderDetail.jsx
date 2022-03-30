@@ -4,13 +4,14 @@ const OrderDetail = ({ total, createOrder }) => {
   const [customer, setCustomer] = useState("");
   const [address, setAddress] = useState("");
 
+  // The method for paypal is 1 and for cash on delivery is 0
   const handleClick = () => {
     createOrder({ customer, address, total, method: 0 });
   };
 
   return (
-    <div className="absolute w-[100%] bg-[#776f6f70] h-almost flex top-0 left-0 right-0 justify-center items-center">
-      <div className="bg-white w-[40rem] rounded p-16 flex flex-col justify-center items-center z-50 ">
+    <div className="absolute w-[100%] bg-[rgba(134,130,130,0.7)] h-almost flex top-0 left-0 right-0 justify-center items-center">
+      <div className="bg-white w-[40rem] rounded-2xl p-16 flex flex-col justify-center items-center z-50 ">
         <h1 className="text-3xl font-bold pb-8">
           You will pay $12 after delivery.
         </h1>

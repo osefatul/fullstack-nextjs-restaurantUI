@@ -20,6 +20,7 @@ const OrderSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
+    // This for paypal and cash delivery.
     method: {
       type: Number,
       required: true,

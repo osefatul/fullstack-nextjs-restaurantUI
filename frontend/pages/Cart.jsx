@@ -84,7 +84,7 @@ function Cart() {
                 customer: shipping.name.full_name,
                 address: shipping.address.address_line_1,
                 total: total,
-                method: 1,
+                method: 1, //For paypal we set method to 1
               });
             });
           }}
