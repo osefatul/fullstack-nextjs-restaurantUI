@@ -20,7 +20,23 @@ function index({ orders, products }) {
     }
   };
 
-  const handleStatus = async () => {};
+  const handleStatus = async (id) => {
+    // This is gonna be an array of objects, so we get the first element of array which is the item object
+    const item = orderList.filter((order) => order._id === id)[0];
+    const currentStatus = item.status;
+
+    try {
+      const res = await axios.put("http://localhost:3000/api/orders/" + id, {
+        status: currentStatus + 1,
+      });
+      setOrderList([
+        res.data,
+        ...orderList.filter((order) => order._id !== id),
+      ]);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div
@@ -29,8 +45,8 @@ function index({ orders, products }) {
     >
       {/* LEFT SIDE */}
       <div className="flex flex-col lg:mx-16 mb-16 ">
-        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-          <div class=" inline-block min-w-full sm:px-6 lg:px-8">
+        <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div className=" inline-block min-w-full sm:px-6 lg:px-8">
             <div className="overflow-hidden">
               <h1 className="text-2xl font-bold ">Products</h1>
 
@@ -64,7 +80,6 @@ function index({ orders, products }) {
                             src={product.img}
                             width={50}
                             height={50}
-                            objectFit="cover"
                             alt=""
                           />
                         </td>
@@ -93,8 +108,8 @@ function index({ orders, products }) {
       </div>
 
       <div className="flex flex-col lg:mx-16">
-        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-          <div class="inline-block min-w-full sm:px-6 lg:px-8">
+        <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div className="inline-block min-w-full sm:px-6 lg:px-8">
             <div className="overflow-hidden">
               <h1 className="text-2xl font-bold ">Orders</h1>
 
