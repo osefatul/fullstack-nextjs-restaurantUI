@@ -42,7 +42,7 @@ function Navbar() {
         >
           {["Homepage", "Products", "Menu", "Events", "Blogs", "Contact"].map(
             (item, i) => (
-              <Link href={`${item === "Homepage" ? "/" : ""}`}>
+              <Link href={`${item === "Homepage" ? "/" : ""}`} key={i}>
                 <li
                   className="text-white text-xs sm:text-sm  lg:text-xl cursor-pointer hover:text-stone-400"
                   key={i}
@@ -80,7 +80,7 @@ function Navbar() {
                 "Blogs",
                 "Contact",
               ].map((item, i) => (
-                <Link href={`${item === "Homepage" ? "/" : ""}`}>
+                <Link href={`${item === "Homepage" ? "/" : ""}`} key={i}>
                   <li
                     className=" text-black text-xl cursor-pointer hover:bg-red-800 w-screen flex items-center justify-center"
                     key={i}

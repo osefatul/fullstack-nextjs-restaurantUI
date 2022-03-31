@@ -73,7 +73,7 @@ function index({ orders, products }) {
 
                 {pizzaList.map((product) => {
                   return (
-                    <tbody className="">
+                    <tbody className="" key={product._id}>
                       <tr>
                         <td className="grid items-center justify-center">
                           <img
@@ -142,7 +142,7 @@ function index({ orders, products }) {
 
                 {orderList.map((order, i) => {
                   return (
-                    <tbody>
+                    <tbody key={i + order._id}>
                       <tr className="">
                         <td>{order._id.slice(0, 10)}...</td>
                         <td>{order.customer}</td>
