@@ -13,7 +13,7 @@ function Navbar() {
   return (
     <div
       className="flex items-center justify-between align-center  
-    h-24 bg-red-800 px-6 sm:px-12 sticky top-0 z-50"
+    h-24 bg-red-800 px-6 sm:px-12 sticky top-0 z-40"
     >
       <div className="hidden md:flex items-center ">
         <div
