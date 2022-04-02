@@ -179,6 +179,7 @@ function index({ orders, products }) {
 export const getServerSideProps = async (ctx) => {
   const myCookie = ctx.req?.cookies || "";
 
+  //if there is no cookies or doesn't match to our cookies in the env file then redirec the user to the admin/login page.
   if (myCookie.token !== process.env.TOKEN) {
     return {
       redirect: {

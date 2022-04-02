@@ -21,24 +21,24 @@ function Login() {
   return (
     <div className="h-almost flex items-center justify-center">
       <div className="flex flex-col">
-        <h1 className="text-2xl 2xl:text-3xl font-bold mb-8">
+        <h1 className="text-2xl 2xl:text-3xl font-bold mb-6">
           Admin Dashboard
         </h1>
         <input
-          className="border-2 h-10 mb-6 px-3 "
+          className="border-2 h-10 mb-4 px-3 "
           type="text"
           placeholder="Enter username"
           onChange={(e) => setUsername(e.target.value)}
         />
         <input
-          className="border-2 h-10 mb-8 px-3 "
-          type="text"
+          className="border-2 h-10 mb-5 px-3 "
+          type="password"
           placeholder="Enter password"
           onChange={(e) => setPassword(e.target.value)}
         />
 
         <button
-          className=" h-10 rounded-lg mb-6 bg-[teal] text-white text-lg cursor-pointer"
+          className=" h-10 rounded-lg mb-4 bg-[teal] text-white text-lg cursor-pointer"
           onClick={handleClick}
         >
           Sign In
