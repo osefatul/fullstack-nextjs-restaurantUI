@@ -155,8 +155,6 @@ function Product({ pizza }) {
   );
 }
 
-export default Product;
-
 //SSR for single product: wea re using and ID for that product.
 
 export const getServerSideProps = async ({ params }) => {
@@ -169,3 +167,5 @@ export const getServerSideProps = async ({ params }) => {
     },
   };
 };
+
+export default Product;

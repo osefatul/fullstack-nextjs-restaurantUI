@@ -25,3 +25,18 @@ For the Paypal account:
     4- Go to My Apps & Credentials -> create an app. choose seller account.
     5- You will get a client ID. Copy that and paste in the Paypal component client-id.
     6- Click on the business account that you just created and get the email and temporary password.
+
+Used Cloudinary for uploading images:
+https://cloudinary.com/console/c-b0e788bfa40d7739e85658c5b1ba2b
+email:so1@gmail.com
+Cloud Name : ddgn3r0t2
+
+Two errors happened:
+1- changed the next.config.js to
+`module.exports = { async rewrites() { return [ { source: "/api/:path*", destination: "https://api.cloudinary.com/:path*", }, ]; }, }`
+as it was blocking CORS
+
+1b- the above didn't work for pizza card, so i changed it back to
+`const nextConfig = { reactStrictMode: true, images: { domains: ["res.cloudinary.com"], }, }; module.exports = nextConfig;`
+
+2- Changed the price to parseInt as the value for price was on text in the first place when you enter a value in to the input

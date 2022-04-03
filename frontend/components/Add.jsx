@@ -11,7 +11,7 @@ function Add({ setClose }) {
 
   const changePrice = (e, index) => {
     const currentPrices = prices;
-    currentPrices[index] = e.target.value;
+    currentPrices[index] = parseInt(e.target.value);
     setPrices(currentPrices);
   };
 
@@ -22,6 +22,7 @@ function Add({ setClose }) {
   const handleExtra = (e) => {
     setExtraOptions((prev) => [...prev, extra]);
   };
+
   const handleCreate = async () => {
     const data = new FormData();
     data.append("file", file);
@@ -32,6 +33,8 @@ function Add({ setClose }) {
         data
       );
 
+      console.log(uploadRes);
+
       const { url } = uploadRes.data;
       const newProduct = {
         title,
@@ -40,6 +43,8 @@ function Add({ setClose }) {
         extraOptions,
         img: url,
       };
+
+      console.log(newProduct);
 
       await axios.post("http://localhost:3000/api/products", newProduct);
       setClose(true);
@@ -72,7 +77,7 @@ function Add({ setClose }) {
           <input
             className="border-b-2 border-gray"
             type="text"
-            onChange={(e) => setTitle(e.target.title)}
+            onChange={(e) => setTitle(e.target.value)}
           />
         </div>
 
