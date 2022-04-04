@@ -68,7 +68,7 @@ function id({ order }) {
           </div>
           <div className={statusClass(1)}>
             <img src="/img/bake.png" width={30} height={30} alt="" />
-            <span>Payment</span>
+            <span>Preparing</span>
             <div className="">
               <img
                 className={styles.checkedIcon}
@@ -81,7 +81,7 @@ function id({ order }) {
           </div>
           <div className={statusClass(2)}>
             <img src="/img/bike.png" width={30} height={30} alt="" />
-            <span>Payment</span>
+            <span>On the way</span>
             <div className="">
               <img
                 className={styles.checkedIcon}
@@ -94,7 +94,7 @@ function id({ order }) {
           </div>
           <div className={statusClass(3)}>
             <img src="/img/delivered.png" width={30} height={30} alt="" />
-            <span>Payment</span>
+            <span>Delivered</span>
             <div className="">
               <img
                 className={styles.checkedIcon}
