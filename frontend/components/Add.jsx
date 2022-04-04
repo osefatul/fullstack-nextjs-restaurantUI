@@ -16,7 +16,11 @@ function Add({ setClose }) {
   };
 
   const handleExtraInput = (e) => {
-    setExtra({ ...extra, [e.target.name]: e.target.value });
+    setExtra({
+      ...extra,
+      [e.target.name]:
+        e.target.name === "text" ? e.target.value : parseInt(e.target.value),
+    });
   };
 
   const handleExtra = (e) => {
