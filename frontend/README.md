@@ -46,10 +46,11 @@ Lets create below functions in order:
     5- You will get a client ID. Copy that and paste in the Paypal component client-id.
     6- Click on the business account that you just created and get the email and temporary password.
 
-Used Cloudinary for uploading images:
-https://cloudinary.com/console/c-b0e788bfa40d7739e85658c5b1ba2b
-email:so1@gmail.com
-Cloud Name : ddgn3r0t2
+#### Using Cloudinary for uploading images:
+
+        1- https://cloudinary.com/console/c-b0e788bfa40d7739e85658c5b1ba2b
+        2- email:so1@gmail.com
+        3- Cloud Name : ddgn3r0t2
 
 Two errors happened:
 1- changed the next.config.js to
