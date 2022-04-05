@@ -37,7 +37,7 @@ Lets create below functions in order:
     3- handleSize: This will calculate the prize action of the different sizes of the pizza. It will calculate the difference in price between the previous and current selected pizza. and send the difference as additional price to changePrice function.
     4- extras useState hook: This is not a function but a hook. We are using this in order to collect all the selected extra ingredients when we add them to carts.
 
-For the Paypal account:
+#### Using Paypal account:
 
     1- Go to [paypal developer](https://developer.paypal.com/developer/accounts) and login.
     2- Go to Sandbox -> Accounts -> Create account

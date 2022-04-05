@@ -138,7 +138,7 @@ function Cart() {
 
                         <td className="px-8 py-2 text-sm ">
                           {product.extras.map((extra) => {
-                            return <span key={extra._id}>{extra.text}</span>;
+                            return <span key={extra._id}>{extra.text}, </span>;
                           })}
                         </td>
 

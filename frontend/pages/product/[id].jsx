@@ -156,7 +156,6 @@ function Product({ pizza }) {
 }
 
 //SSR for single product: wea re using and ID for that product.
-
 export const getServerSideProps = async ({ params }) => {
   const res = await axios.get(
     `http://localhost:3000/api/products/${params.id}`
