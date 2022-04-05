@@ -9,16 +9,16 @@ The application has few pages as below:
 
 #### Libraries
 
-1- antd: we used this library only for importing Carousel
-2- react-icons: For sidebar icons.
-3- redux: for state management.
-4- cookie: for cookie
+        1- antd: we used this library only for importing Carousel
+        2- react-icons: For sidebar icons.
+        3- redux: for state management.
+        4- cookie: for cookie
 
 #### Cleaning and Preparing our Application
 
-1- Clean all unnecessary files that are listed or downloaded with with next.js.
-2- Create a component file named Layout. This file should return Navbar, Footer and children props which will be in the middle of mentioned components.
-2- Go to \_app.js file and and pass Component component as the Layout children. that children actually refers to index.js file which is our home page
+    1- Clean all unnecessary files that are listed or downloaded with with next.js.
+    2- Create a component file named Layout. This file should return Navbar, Footer and children props which will be in the middle of mentioned components.
+    2- Go to \_app.js file and and pass Component component as the Layout children. that children actually refers to index.js file which is our home page
 
 ### Server Side Rendering
 
