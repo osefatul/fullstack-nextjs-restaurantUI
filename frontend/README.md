@@ -52,7 +52,7 @@ Lets create below functions in order:
         2- email:so1@gmail.com
         3- Cloud Name : ddgn3r0t2
 
-#### Two main Errors occured while Uploading image.
+#### Two Main Errors Occured while Uploading Image.
 
         1a- changed the next.config.js to
         `module.exports = { async rewrites() { return [ { source: "/api/:path*", destination: "https://api.cloudinary.com/:path*", }, ]; }, }`
