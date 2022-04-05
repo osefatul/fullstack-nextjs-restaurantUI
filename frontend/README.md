@@ -52,12 +52,13 @@ Lets create below functions in order:
         2- email:so1@gmail.com
         3- Cloud Name : ddgn3r0t2
 
-Two errors happened:
-1- changed the next.config.js to
-`module.exports = { async rewrites() { return [ { source: "/api/:path*", destination: "https://api.cloudinary.com/:path*", }, ]; }, }`
-as it was blocking CORS
+#### Two main Errors occured while Uploading image.
 
-1b- the above didn't work for pizza card, so i changed it back to
-`const nextConfig = { reactStrictMode: true, images: { domains: ["res.cloudinary.com"], }, }; module.exports = nextConfig;`
+        1a- changed the next.config.js to
+        `module.exports = { async rewrites() { return [ { source: "/api/:path*", destination: "https://api.cloudinary.com/:path*", }, ]; }, }`
+        as it was blocking CORS
 
-2- Changed the price to parseInt as the value for price was on text in the first place when you enter a value in to the input
+        1b- the above didn't work for pizza card, so i changed it back to
+        `const nextConfig = { reactStrictMode: true, images: { domains: ["res.cloudinary.com"], }, }; module.exports = nextConfig;`
+
+        2- Changed the price to parseInt as the value for price was on text in the first place when you enter a value in to the input
