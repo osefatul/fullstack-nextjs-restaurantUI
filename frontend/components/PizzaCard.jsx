@@ -5,7 +5,7 @@ function PizzaCard({ pizza }) {
     <Link href={`/product/${pizza._id}`}>
       <div className=" text-black items-center justify-between w-[24rem] p-2 py-5 px-10">
         <img
-          className="h-60 w-full object-contain py-2 self-start "
+          className="h-44 w-full object-contain py-2 self-start "
           src={pizza.img}
           alt=""
         />

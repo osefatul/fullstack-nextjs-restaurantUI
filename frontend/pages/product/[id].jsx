@@ -15,12 +15,14 @@ function Product({ pizza }) {
     setPrice(price + number);
   };
 
+  // Change price of different sizes
   const handleSize = (sizeIndex) => {
     const difference = pizza.prices[sizeIndex] - pizza.prices[size];
     setSize(sizeIndex);
     changePrice(difference);
   };
 
+  // Adding extras
   const handleChange = (e, option) => {
     const checked = e.target.checked;
     if (checked) {
@@ -32,44 +34,45 @@ function Product({ pizza }) {
     }
   };
 
+  // Clicking on ADD cart
   const handleClick = () => {
     dispatch(addProduct({ ...pizza, extras, price, quantity }));
   };
 
   return (
-    <div className="h-almost flex flex-col md:flex-row items-center justify-center mx-auto py-5 overflow-auto scrollbar-hide">
+    <div className=" flex flex-col md:flex-row items-center justify-center mx-auto py-2 overflow-auto scrollbar-hide">
       {/* Left */}
-      <div className="flex items-center md:items-start py-0 md:py-16 px-16 justify-center h-full md:h-5/6 w-[80%] md:w-[30%]  overflow-auto scrollbar-hide">
+      <div className="flex items-start md:items-start py-0 px-16 justify-start h-full md:h-5/6 w-[80%] md:w-[30%]  overflow-auto scrollbar-hide">
         {/* <div className="flex items-center justify- h-5/6 w-full relative"> */}
         <img className=" object-contain" src={pizza.img} alt="" />
         {/* </div> */}
       </div>
       {/* Right */}
       <div className=" text-black py-4 h-full  px-16 sm:pr-24 sm:pl-10 md:w-[70rem] space-y-4 overflow-auto scrollbar-hide">
-        <div className="flex flex-col  py-6 space-y-5 md:text-left">
-          <h1 className=" text-xl sm:text-2xl md:text-5xl font-bold text-center md:text-left">
+        <div className="flex flex-col py-2 space-y-3 md:text-left">
+          <h1 className="  text-[22px] sm:text-[26px] md:text-[30px] lg:text-[34px] 2xl:text-[42px] font-bold text-center md:text-left">
             {pizza.title}
           </h1>
-          <span className="text-[#d1411e] text-lg md:text-2xl border-b-2 w-14 border-[#d1411e]  place-self-center md:place-self-start">
+          <span className="text-[#d1411e] text-[10px] md:text-[11px] lg:text-[15px] border-b-2 w-14 border-[#d1411e]  place-self-center md:place-self-start">
             {`$${price}`}
           </span>
-          <p className="text-sm md:text-lg lg:text-xl xl:text-2xl 3xl:text-4xl ">
+          <p className="text-[12px] md:text-[14px] lg:text-[18px] ">
             {pizza.desc}
           </p>
         </div>
 
         {/* sizes */}
-        <h3 className="text-xl md:text-2xl font-bold xl:text-4xl pb-2">
+        <h3 className=" text-[22px] sm:text-[26px] md:text-[30px] lg:text-[32px] 2xl:text-[36px] ">
           Choose the size:
         </h3>
 
-        <div className="flex flex-col md:flex-row items-center justify-center ">
+        <div className="flex flex-col md:flex-row items-center justify-even ">
           <div
-            className=" w-3/6 space-y-4 flex flex-col items-center justify-center relative mb-5 md:mb-0  sm:mr-5"
+            className=" w-[20%] space-y-4 flex flex-col items-center justify-center relative mb-5 md:mb-0  sm:mr-5"
             onClick={() => handleSize(0)}
           >
             <img
-              className="w-[10rem] cursor-pointer"
+              className="w-[6rem] cursor-pointer"
               src="/img/size.png"
               alt=""
             />
@@ -78,11 +81,11 @@ function Product({ pizza }) {
             </span> */}
           </div>
           <div
-            className=" w-4/6 space-y-4 flex flex-col items-center justify-center relative mb-5 md:mb-0  sm:mr-5"
+            className=" w-[23%] space-y-4 flex flex-col items-center justify-center relative mb-5 md:mb-0  sm:mr-5"
             onClick={() => handleSize(1)}
           >
             <img
-              className=" w-[12rem] justify-self-center cursor-pointer"
+              className=" w-[8rem] justify-self-center cursor-pointer"
               src="/img/size.png"
               alt=""
             />
@@ -91,11 +94,11 @@ function Product({ pizza }) {
             </span> */}
           </div>
           <div
-            className=" w-5/6 space-y-4 flex flex-col items-center justify-center relative mb-5 sm:mb-0 sm:mr-5 "
+            className=" w-[25%] space-y-4 flex flex-col items-center justify-center relative mb-5 sm:mb-0 sm:mr-5 "
             onClick={() => handleSize(2)}
           >
             <img
-              className="w-[14rem] cursor-pointer "
+              className="w-[10rem] cursor-pointer "
               src="/img/size.png"
               alt=""
             />
@@ -105,12 +108,12 @@ function Product({ pizza }) {
           </div>
         </div>
 
-        <h3 className=" text-xl md:text-2xl font-bold xl:text-4xl pb-4">
+        <h3 className=" text-[22px] sm:text-[26px] md:text-[30px] lg:text-[32px] 2xl:text-[36px] pb-4">
           Choose Additional Ingredients
         </h3>
 
         {/* Ingredients */}
-        <div className="text-xs md:text-sm lg:text-lg xl:text-2xl font-normal ">
+        <div className="text-[12px] md:text-[14px] lg:text-[18px] font-normal ">
           {pizza.extraOptions.map((option) => {
             return (
               <div
