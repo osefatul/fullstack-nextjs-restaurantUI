@@ -1,5 +1,7 @@
 # MERN Stack Pizza Ordering Website
 
+Note: Make sure to run this with 3000 port as we have pre-assigned it on 3000.
+
 We built a MERN full stack pizza ordering web application. We have use different libraries in order to create a professional website as much as possible.
 The application has few pages as below:
 1- Home page.
