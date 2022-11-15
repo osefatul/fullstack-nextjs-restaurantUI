@@ -2,7 +2,10 @@
 
 Note: Make sure to run this with 3000 port as we have pre-assigned it on 3000.
 
-We built a MERN full stack pizza ordering web application. We have use different libraries in order to create a professional website as much as possible.
+### Intro
+This is a fullstack MERN web application to order pizza. A user is able to choose pizza, and then add or discard ingredients to the pizza as the wish. user will be able to check out and pay for it using Paypal library. User will also be able to have admin rights where they can add, delete and edit pizzas
+
+### Features
 The application has few pages as below:
 1- Home page.
 2- Cart Page - to check if there are anything pending in the cart.
@@ -10,7 +13,6 @@ The application has few pages as below:
 4- /:orderId - This to see an ordered pizza if it has been checked out or not.
 
 #### Libraries
-
         1- antd: we used this library only for importing Carousel
         2- react-icons: For sidebar icons.
         3- redux: for state management.
